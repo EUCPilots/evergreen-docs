@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Evergreen",
   description: "Enterprise automation for Windows applications and image management.",
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: '/evergreen-docs/favicon.ico' }]],
   lastUpdated: true,
   base: '/evergreen-docs/',
 
@@ -18,7 +18,8 @@ export default defineConfig({
         items: [
           { text: 'App Tracker', link: 'https://stealthpuppy.com/apptracker/' },
           { text: 'PSPackagefactory', link: 'https://stealthpuppy.com/packagefactory/' },
-          { text: 'Nerdio Manager Shell Apps', link: 'https://stealthpuppy.com/nerdio-shell-apps-p1/' }
+          { text: 'Nerdio Manager Shell Apps', link: 'https://stealthpuppy.com/nerdio-shell-apps-p1/' },
+          { text: 'Rimo3', link: 'https://stealthpuppy.com/rimo3-evergreen/' }
         ]
       },
       { text: 'PowerShell Gallery', link: 'https://www.powershellgallery.com/packages/Evergreen/' },
@@ -101,7 +102,7 @@ export default defineConfig({
 
     footer: {
       message: 'A stealthpuppy project.',
-      copyright: 'Copyright &copy; 2025 Aaron Parker'
+      copyright: 'Copyright &copy; 2025 Aaron Parker. <a target="_blank" href="https://icons8.com/icon/tI2IB1EJFmdP/greentech">Greentech</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>'
     }
   }
 })

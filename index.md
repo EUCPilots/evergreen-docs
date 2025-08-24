@@ -7,7 +7,7 @@ hero:
   text: "App data you can trust."
   tagline: Enterprise automation for Windows apps and image management with the latest version and downloads for common Windows applications via PowerShell.
   image:
-    src: '/images/evergreenbulb.png'
+    src: '/images/evergreen-powershell.png'
     alt: 'Evergreen'
   actions:
     - theme: brand
@@ -33,5 +33,9 @@ features:
     details: Create a library of application installer binaries to give you control over installed versions.
     icon:
       src: /icons/ic_fluent_library_32_color.svg
+  - title: Auditing
+    details: Audit and validate a Windows image or Windows PCs for installed application versions.
+    icon:
+      src: /icons/ic_fluent_book_open_lightbulb_32_color.svg
 ---
 
