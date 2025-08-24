@@ -25,7 +25,7 @@ export default defineConfig({
       { text: 'Change log', link: '/changelog' }
     ],
 
-    logo: '/assets/images/evergreenbulb.png',
+    logo: '/images/evergreenbulb.png',
     search: {
       provider: 'local'
     },
