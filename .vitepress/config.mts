@@ -6,6 +6,7 @@ export default defineConfig({
   description: "Enterprise automation for Windows applications and image management.",
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   lastUpdated: true,
+  base: '/evergreen-docs/',
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
