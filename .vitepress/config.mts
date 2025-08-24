@@ -7,6 +7,9 @@ export default defineConfig({
   head: [['link', { rel: 'icon', href: '/evergreen-docs/favicon.ico' }]],
   lastUpdated: true,
   base: '/evergreen-docs/',
+  sitemap: {
+    hostname: 'https://eucpilots.github.io/evergreen-docs/'
+  },
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -103,6 +106,10 @@ export default defineConfig({
     footer: {
       message: 'A stealthpuppy project.',
       copyright: 'Copyright &copy; 2025 Aaron Parker. <a target="_blank" href="https://icons8.com/icon/tI2IB1EJFmdP/greentech">Greentech</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>'
+    },
+
+    editLink: {
+      pattern: 'https://github.com/EUCPilots/evergreen-docs/edit/main/docs/:path'
     }
   }
 })
