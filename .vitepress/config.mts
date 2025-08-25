@@ -109,7 +109,7 @@ export default defineConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/EUCPilots/evergreen-docs/edit/main/docs/:path'
+      pattern: 'https://github.com/EUCPilots/evergreen-docs/edit/main/:path'
     }
   }
 })
