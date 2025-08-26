@@ -45,7 +45,7 @@ If an existing JSON file is specified on the `-Path` parameter of`Export-Evergre
 ```
 
 ::: note
-    `Export-EvergreenApp` does not truncate date in the exported file. You will have to manage data with a seperate process as the file grows.
+`Export-EvergreenApp` does not truncate date in the exported file. You will have to manage data with a seperate process as the file grows.
 :::
 
 The JSON file can be read back into an object with `ConvertFrom-Json`:

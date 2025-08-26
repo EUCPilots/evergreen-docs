@@ -52,7 +52,7 @@ C:\Apps\OneDrive\Insider\21.056.0318.0001\OneDriveSetup.exe
 To download application installers into a single directory, the `-CustomPath` parameter can be used. Note that an application object can return multiple versions or channels of an application with the same installer name - when using `-CustomPath`, the first installer will be saved and subsequent installers with the same file name will be skipped.
 
 ::: tip "Attention"
-    `Save-EvergreenApp -CustomPath` will only download the first installer passed to the function where the object includes multiple installers with the same file name.
+`Save-EvergreenApp -CustomPath` will only download the first installer passed to the function where the object includes multiple installers with the same file name.
 :::
 
 Therefore, when using `-CustomPath`, it would best to filter the output from `Get-EvergreenApp` before passing it to `Save-EvergreenApp`. For example:
