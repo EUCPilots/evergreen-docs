@@ -18,7 +18,7 @@ hero:
       link: /install
     - theme: alt
       text: GitHub
-      link: https://github.com/EUCPilots
+      link: https://github.com/eucpilots/evergreen-module
 
 features:
   - title: Gold images
@@ -38,4 +38,3 @@ features:
     icon:
       src: /icons/ic_fluent_book_open_lightbulb_32_color.svg
 ---
-

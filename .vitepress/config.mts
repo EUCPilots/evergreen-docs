@@ -98,7 +98,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/eucpilots/evergreen' },
+      { icon: 'github', link: 'https://github.com/eucpilots/evergreen-module' },
       { icon: 'bluesky', link: 'https://bsky.app/profile/stealthpuppy.com' },
       { icon: 'linkedin', link: 'https://www.linkedin.com/in/aaronedwardparker/' },
     ],
