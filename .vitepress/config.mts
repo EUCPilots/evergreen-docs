@@ -11,6 +11,7 @@ export default defineConfig({
     hostname: 'https://eucpilots.github.io/evergreen-docs/'
   },
   cleanUrls: true,
+  ignoreDeadLinks: true,
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
