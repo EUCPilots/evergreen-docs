@@ -7,7 +7,7 @@ hero:
   text: "App data you can trust."
   tagline: Enterprise automation for Windows apps and image management with the latest version and downloads for common Windows applications via PowerShell.
   image:
-    src: '/images/evergreen-powershell.png'
+    src: '/assets/images/evergreen-powershell.png'
     alt: 'Evergreen'
   actions:
     - theme: brand
@@ -24,17 +24,17 @@ features:
   - title: Gold images
     details: Create gold images with the latest versions of applications - ensures those images are up to date.
     icon:
-      src: /icons/ic_fluent_ribbon_32_color.svg
+      src: /assets/icons/ic_fluent_ribbon_32_color.svg
   - title: Pipelines
     details: Create pipelines to dynamically import the latest application version into Intune, Configuration Manager, Nerdio Manager etc.
     icon:
-      src: /icons/ic_fluent_list_bar_32_color.svg
+      src: /assets/icons/ic_fluent_list_bar_32_color.svg
   - title: Libraries
     details: Create a library of application installer binaries to give you control over installed versions.
     icon:
-      src: /icons/ic_fluent_library_32_color.svg
+      src: /assets/icons/ic_fluent_library_32_color.svg
   - title: Auditing
     details: Audit and validate a Windows image or Windows PCs for installed application versions.
     icon:
-      src: /icons/ic_fluent_book_open_lightbulb_32_color.svg
+      src: /assets/icons/ic_fluent_book_open_lightbulb_32_color.svg
 ---

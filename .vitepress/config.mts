@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  srcDir: './docs',
   title: "Evergreen",
   description: "Enterprise automation for Windows applications and image management.",
   head: [['link', { rel: 'icon', href: '/evergreen-docs/favicon.ico' }]],
@@ -11,7 +12,7 @@ export default defineConfig({
     hostname: 'https://eucpilots.github.io/evergreen-docs/'
   },
   cleanUrls: true,
-  ignoreDeadLinks: true,
+  // ignoreDeadLinks: true,
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
@@ -31,7 +32,7 @@ export default defineConfig({
       { text: 'Change log', link: '/changelog' }
     ],
 
-    logo: '/images/evergreenbulb.png',
+    logo: '/assets/images/evergreenbulb.png',
     search: {
       provider: 'local'
     },
