@@ -10,6 +10,7 @@ export default defineConfig({
   sitemap: {
     hostname: 'https://eucpilots.github.io/evergreen-docs/'
   },
+  cleanUrls: true,
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
