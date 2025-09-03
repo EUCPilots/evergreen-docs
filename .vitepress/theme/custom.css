@@ -4,5 +4,31 @@
   --vp-c-brand-2: #01786c;
   --vp-home-hero-name-color: #009485;
   --vp-c-indigo-3: #009485e4;
-  /* --vp-home-hero-name-background: -webkit-linear-gradient(135deg, #bd34fe, #009485); */
+}
+
+:root {
+  --vp-home-hero-image-filter: blur(44px);
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    #67b9c9 50%,
+    #67b9c9 50%
+  );
+  --vp-home-hero-image-filter: blur(44px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+
+.VPHero .VPImage {
+  filter: drop-shadow(-2px 4px 6px rgba(0, 0, 0, 0.2));
+  padding: 18px;
 }
