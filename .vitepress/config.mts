@@ -42,7 +42,14 @@ export default defineConfig({
         text: 'Introduction',
         collapsed: false,
         items: [
-          { text: 'Installing Evergreen', link: '/install' },
+          { text: 'About Evergreen', link: '/about' },
+          { text: 'Installing Evergreen', link: '/install' }
+        ]
+      },
+      {
+        text: 'Using Evergreen',
+        collapsed: false,
+        items: [
           { text: 'Finding supported apps', link: '/find' },
           { text: 'Download installers', link: '/save' },
           { text: 'Test URLs', link: '/test' },
