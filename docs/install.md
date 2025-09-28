@@ -9,7 +9,13 @@ Evergreen supports Windows PowerShell 5.1 and PowerShell 7.0+. Evergreen should 
 
 ## Install from the PowerShell Gallery
 
-The Evergreen module is published to the PowerShell Gallery and can be found here: [Evergreen](https://www.powershellgallery.com/packages/Evergreen/). The module can be installed from the gallery with:
+The Evergreen module is published to the PowerShell Gallery and can be found here: [Evergreen](https://www.powershellgallery.com/packages/Evergreen/).
+
+::: info
+Installing Evergreen from the PowerShell Gallery is the recommend way to install the module.
+:::
+
+The module can be installed from the gallery with:
 
 ```powershell
 Install-Module -Name Evergreen
