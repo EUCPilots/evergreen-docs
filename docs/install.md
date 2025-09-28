@@ -58,7 +58,7 @@ elseif ([System.Version]$Published.Version -gt [System.Version]$Installed.Versio
 
 ## Manual Installation from the Repository
 
-The module can be downloaded from the [GitHub source repository](https://github.com/aaronparker/Evergreen) which includes the module in the `Evergreen` folder. The folder needs to be copied into one of your PowerShell Module Paths. To see the full list of available PowerShell Module paths, use `$env:PSModulePath.split(';')` in a PowerShell console.
+The module can be downloaded from the [GitHub source repository](https://github.com/eucpilots/evergreen-module) which includes the module in the `Evergreen` folder. The folder needs to be copied into one of your PowerShell Module Paths. To see the full list of available PowerShell Module paths, use `$env:PSModulePath.split(';')` in a PowerShell console.
 
 Common PowerShell module paths include:
 
