@@ -1,7 +1,7 @@
 ---
 external help file: Evergreen-help.xml
 Module Name: Evergreen
-online version: https://stealthpuppy.com/evergreen/help/en-US/Export-EvergreenApp/
+online version: https://eucpilots.com/evergreen-docs/help/en-US/Export-EvergreenApp/
 schema: 2.0.0
 ---
 
@@ -114,10 +114,10 @@ Export-EvergreenApp accepts the output from Get-EvergreenApp.
 
 ## NOTES
 
-Site: https://stealthpuppy.com/evergreen
+Site: https://eucpilots.com/evergreen-docs
 
 Author: Aaron Parker
 
 ## RELATED LINKS
 
-[Export application version information](https://stealthpuppy.com/evergreen/export/)
+[Export application version information](https://eucpilots.com/evergreen-docs/export/)

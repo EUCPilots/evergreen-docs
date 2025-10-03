@@ -1,7 +1,7 @@
 ---
 external help file: Evergreen-help.xml
 Module Name: Evergreen
-online version: https://stealthpuppy.com/evergreen/help/en-US/Start-EvergreenLibraryUpdate/
+online version: https://eucpilots.com/evergreen-docs/help/en-US/Start-EvergreenLibraryUpdate/
 schema: 2.0.0
 ---
 
@@ -135,10 +135,10 @@ Start-EvergreenLibraryUpdate accepts a string parameter.
 
 ## NOTES
 
-Site: https://stealthpuppy.com/evergreen
+Site: https://eucpilots.com/evergreen-docs
 
 Author: Aaron Parker
 
 ## RELATED LINKS
 
-[Update an Evergreen library](https://stealthpuppy.com/evergreen/updatelibrary/)
+[Update an Evergreen library](https://eucpilots.com/evergreen-docs/updatelibrary/)
