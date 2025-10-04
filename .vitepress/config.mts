@@ -52,7 +52,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Update supported apps', link: '/updateapps' },
-          { text: 'Finding supported apps', link: '/find' },
+          { text: 'Find supported apps', link: '/find' },
           { text: 'Return app details', link: '/use' },
           { text: 'Download installers', link: '/save' },
           { text: 'Test URLs', link: '/test' },

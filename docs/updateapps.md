@@ -5,13 +5,13 @@ layout: doc
 
 ## Using Update-Evergreen
 
-After the Evergreen module is installed, the supported application functions need to be downloaded with `Update-Evergreen`.
+After the Evergreen module is installed, the supported application functions need to be downloaded with `Update-Evergreen`. This function displays readable status that should work for an interactive session and non-interactive CI deployments (e.g. Azure Pipelines and Github Workflows).
 
 ::: warning
 The Evergreen module requires the application functions and manifests to work. Ensure that you run `Update-Evergreen` as the first action after installing Evergreen.
 :::
 
-A new function has been added to Evergreen named `Update-Evergreen`. This downloads the latest release from the [evergreen-apps](https://github.com/EUCPilots/evergreen-apps) repository, unpacks the files and stores them locally.
+`Update-Evergreen` downloads the latest Evergreen apps and manifests release from the [eucpilots/evergreen-apps](https://github.com/EUCPilots/evergreen-apps) repository, unpacks the files and stores them locally.
 
 ![Running Update-Evergreen for the first time](/img/update-evergreen.gif)
 
@@ -22,6 +22,26 @@ This function supports the `-Force` parameter to force the download of the lates
 When importing Evergreen where the local cache is out of date, you will be prompted to update:
 
 ![Importing Evergreen and being prompted to run Update-Evergreen](/img/import-evergreen.gif)
+
+### Updating to a specific release
+
+The default behaviour of `Update-Evergreen` is to update the the latest release from the [eucpilots/evergreen-apps](https://github.com/EUCPilots/evergreen-apps) repository. There may be instances where you want to download a specific release instead of the latest. 
+
+`Update-Evergreen` supports the `-Release` parameter. This accepts a release tag similar to `v25.10.02.22`. The -`Force` parameter is required then specifing a release:
+
+```powershell
+Update-Evergreen -Release "v25.10.02.22" -Force
+```
+
+## Update behaviour
+
+Evergreen uses the following behaviour and rules when
+
+* When the Evergreen module is imported, a check is made for the latest release and the administrator is notified whether the local cache is out of date.
+* Running `Update-Evergreen` is required - the local cache is not automatically updated when the module is imported.
+* When running `Update-Evergreen`, if the local cache is out of date, the cache is automatically updated to the latest release.
+* If you make direct changes to the local cache, and the remote release and local cache versions match, `Update-Evergreen` will display the mismatched files, but will not perform an update. Run `Update-Evergreen -Force` to re-sync the local cache.
+* If you download a specific Evergreen apps release, the local cache will be out of date. If you run `Update-Evergreen` again, the local cache will be updated to the latest release.
 
 ## Cache location
 
@@ -37,7 +57,7 @@ PS C:\> Get-EvergreenAppsPath
 C:\Users\aaron\AppData\Local\Evergreen
 ```
 
-## Setting a custom cache location
+## Set a custom cache location
 
 A custom cache location can be set with the `EVERGREEN_APPS_PATH` environment variable. Configure this variable in the user or system context and ensure it points to a valid path.
 
