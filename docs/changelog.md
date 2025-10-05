@@ -3,6 +3,21 @@ layout: doc
 ---
 # Change log
 
+## 2510.2802.0-beta
+
+* Adds `-Release` to `Update-Evergreen` to enable updating Evergreen apps to a specified version
+* Adds `Expand-CabArchive` to support `Get-MicrosoftPowerAutomateDesktop`
+
+## 2509.2549.0-beta
+
+* Creates `Update-Evergreen` to download application functions and manifests from `evergreen-apps` repository
+* Removes application functions and manifests from the module
+* Deletes docs, because this has been moved to a seperate repo
+
+## 2509.2489
+
+* Fixes an issue where `MicrosoftOneDrive` would return `x64` architecture for an `x86` release
+
 ## 2508.2431
 
 * Update `OmnissaHorizonClient`, `FreedomScientificFusion`, `FreedomScientificJAWS`, `FreedomScientificZoomText` to use the Microsoft Edge user agent instead of the default Evergreen user agent
