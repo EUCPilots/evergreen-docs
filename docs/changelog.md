@@ -36,7 +36,8 @@ This approach should achieve the following:
 * Ensures Evergreen can be identified on calls to target endpoints
 * Avoids the need to update the previous user agent (The default Microsoft Edge on Windows user agent was being used) - some vendor endpoints will block out of date user agents
 
-  This change introduces the following private functions:
+This change introduces the following private functions:
+
 * Get-EvergreenUserAgent
 * Get-ModuleVersion
 * Get-OSName
