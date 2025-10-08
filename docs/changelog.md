@@ -3,6 +3,17 @@ layout: doc
 ---
 # Change log
 
+## 2510.2808.0
+
+BREAKING CHANGE:
+
+* Release version that seperates the core module from the Evergreen apps
+* Requires the administrator to run `Update-Evergreen` to download the Evergreen app functions and manifests before using the module
+
+::: warning
+Update existing scripts with `Update-Evergreen` after importing the Evergreen module, or before using other Evergreen functions.
+:::
+
 ## 2510.2802.0-beta
 
 * Adds `-Release` to `Update-Evergreen` to enable updating Evergreen apps to a specified version
