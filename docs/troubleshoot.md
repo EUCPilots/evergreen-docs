@@ -167,7 +167,7 @@ Get-EvergreenApp -Name "MicrosoftWvdRemoteDesktop" -ErrorAction "SilentlyContinu
 
 ### Unexpected Output
 
-Where the output from a function is producing output that is clearly incorrect, you should [log an issue](https://github.com/aaronparker/evergreen/issues).
+Where the output from a function is producing output that is clearly incorrect, you should [log an issue](https://github.com/eucpilots/evergreen-module/issues).
 
 What may be more common is filtering the output incorrectly and not receiving the expected result. Here's an example output from `MicrosoftWvdRemoteDesktop` which has several releases with multiple properties. Viewing the output without any filtering will show all releases and all properties:
 

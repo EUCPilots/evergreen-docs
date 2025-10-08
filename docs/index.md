@@ -7,7 +7,7 @@ hero:
   text: "App data you can trust."
   tagline: Enterprise automation for Windows apps and image management with the latest version and downloads for common Windows applications via PowerShell.
   image:
-    src: '/images/evergreen-powershell.png'
+    src: '/img/evergreen-powershell.png'
     alt: 'Evergreen'
   actions:
     - theme: brand

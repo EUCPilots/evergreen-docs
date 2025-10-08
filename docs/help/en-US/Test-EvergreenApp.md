@@ -1,7 +1,7 @@
 ---
 external help file: Evergreen-help.xml
 Module Name: Evergreen
-online version: https://stealthpuppy.com/evergreen/help/en-US/Save-EvergreenApp/
+online version: https://eucpilots.com/evergreen-docs/help/en-US/Save-EvergreenApp/
 schema: 2.0.0
 ---
 
@@ -192,10 +192,10 @@ Provides a list URLs and a true/false result.
 
 ## NOTES
 
-Site: https://stealthpuppy.com/evergreen
+Site: https://eucpilots.com/evergreen-docs
 
 Author: Aaron Parker
 
 ## RELATED LINKS
 
-[Test installers](https://stealthpuppy.com/evergreen/test/)
+[Test installers](https://eucpilots.com/evergreen-docs/test/)

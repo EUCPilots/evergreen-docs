@@ -1,7 +1,9 @@
 ---
 layout: doc
 ---
-# Using Evergreen
+# Return app details
+
+## Using Get-EvergreenApp
 
 `Get-EvergreenApp` is used to return application details by specifying an application with the `-Name` parameter.
 

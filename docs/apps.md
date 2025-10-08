@@ -1,9 +1,9 @@
-﻿---
+---
 layout: doc
 ---
 # 374 Supported applications
 
-Evergreen <Badge type="tip" text="2508.2374" /> supports the following applications:
+Evergreen supports the following applications:
 
 | Name                                 | Application                                                       | Link                                                                                                                                        |
 | ------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |

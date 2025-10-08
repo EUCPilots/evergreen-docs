@@ -34,7 +34,7 @@ Where Adobe releases an update for Acrobat/Reader DC for Windows ahead of macOS,
 The determine the current update version of `AdobeAcrobat`, the [URL for macOS updates](https://armmf.adobe.com/arm-manifests/win/AcrobatDC/acrobat/current_version.txt) is used. This provides a simple text lookup of the latest version number.
 
 ::: info
-The Windows version of Adobe Acrobat and Reader uses an update URL like: `https://armmf.adobe.com/arm-manifests/win/AcrobatDCManifest3.msi`, which would require unpacking and parsing the MSI file. Sample code to query the MSI database has been posted here: [AdobeReader download links not valid](https://github.com/aaronparker/evergreen/issues/312#issuecomment-1103712904); however, this approach will only work on a Windows hosts and will not support macOS or Linux.
+The Windows version of Adobe Acrobat and Reader uses an update URL like: `https://armmf.adobe.com/arm-manifests/win/AcrobatDCManifest3.msi`, which would require unpacking and parsing the MSI file. Sample code to query the MSI database has been posted here: [AdobeReader download links not valid](https://github.com/eucpilots/evergreen-module/issues/312#issuecomment-1103712904); however, this approach will only work on a Windows hosts and will not support macOS or Linux.
 :::
 
 Alternative application - `AdobeAcrobatDC` and `AdobeAcrobatReaderDC` use a web API lookup to determine the current version of Adobe Acrobat Reader DC, Acrobat Standard DC, and Acrobat Pro DC. Earlier version of Acrobat are still affected by this issue.
@@ -101,7 +101,7 @@ This application function works OK without additional requirements on Windows, b
 
 `LibreOffice` uses the update host at `https://update.libreoffice.org/check.php` to determine the available update release. The Document Foundation does not immediately make the update host return the latest version at the time of release. In a scenario where the update host does not return the very latest version and the TDF has pulled the downloads for the same version returned from the update host, `LibreOffice` is unable to build valid download links.
 
-The only recourse at this time is to wait until the TDF tells the update host to return the latest version. Also see [LibreOffice version](https://github.com/aaronparker/evergreen/issues/218)
+The only recourse at this time is to wait until the TDF tells the update host to return the latest version. Also see [LibreOffice version](https://github.com/eucpilots/evergreen-module/issues/218)
 
 ### Microsoft365Apps
 
@@ -113,7 +113,7 @@ Full channel names are listed here: [Update history for Microsoft 365 Apps](http
 
 ### MicrosoftTeamsClassic
 
-The version number returned by the Microsoft Teams update API may be slightly different to the version number displayed in the `ProductVersion` property in the MSI or in Programs and Features. For example, `Get-EvergreenApp -Name MicrosoftTeams` may report a version number of `1.4.00.8872`, but the Windows Installer may report `1.4.0.8872`. Also see [Get-MicrosoftTeams displays slightly wrong formatted version number](https://github.com/aaronparker/Evergreen/issues/58).
+The version number returned by the Microsoft Teams update API may be slightly different to the version number displayed in the `ProductVersion` property in the MSI or in Programs and Features. For example, `Get-EvergreenApp -Name MicrosoftTeams` may report a version number of `1.4.00.8872`, but the Windows Installer may report `1.4.0.8872`. Also see [Get-MicrosoftTeams displays slightly wrong formatted version number](https://github.com/eucpilots/evergreen-module/issues/58).
 
 ### MicrosoftWvdRemoteDesktop
 
@@ -138,7 +138,7 @@ WARNING: Get-MicrosoftWvdRemoteDesktop: Unable to retrieve headers from https://
 
 Any supported language can be passed to `MozillaFirefox` by passing a hashtable to `-AppParams`. For example: `Get-EvergreenApp -Name "MozillaFirefox" -AppParams @{Language="en-GB", "es-ES"}` will return the English (UK) and Spanish language installers for Firefox.
 
-Most [supported languages](https://www.mozilla.org/en-US/firefox/all/#product-desktop-release) can be passed to the function as the language short code. The list of languages can be found in the [MozillaFirefox](https://github.com/aaronparker/evergreen/blob/main/Evergreen/Manifests/MozillaFirefox.json) manifest.
+Most [supported languages](https://www.mozilla.org/en-US/firefox/all/#product-desktop-release) can be passed to the function as the language short code. The list of languages can be found in the [MozillaFirefox](https://github.com/eucpilots/evergreen-module/blob/main/Evergreen/Manifests/MozillaFirefox.json) manifest.
 
 ### OBSStudio
 
@@ -146,11 +146,11 @@ Returning the latest version and download for OBS Studio may fail when the OBS P
 
 Evergreen could query versions from the GitHub repository; however, the the OBS Project does not consistently maintain releases in the repository. In some instances a specific release of OBS Studio may address an issue with the macOS version only and `OBSStudio` would then return no results.
 
-Also see [Get-EvergreenApp OBSStudio not working due to a 404 errors](https://github.com/aaronparker/evergreen/issues/184).
+Also see [Get-EvergreenApp OBSStudio not working due to a 404 errors](https://github.com/eucpilots/evergreen-module/issues/184).
 
 ### OmnissaHorizonClient
 
-`OmnissaHorizonClient` may not always return the current release - the major version property in the VMware Horizon Client software update data does not use easily sortable versioning. This may be fixed in a future release. Also see [VMware Horizon Client reporting out of date version](https://github.com/aaronparker/Evergreen/issues/161).
+`OmnissaHorizonClient` may not always return the current release - the major version property in the VMware Horizon Client software update data does not use easily sortable versioning. This may be fixed in a future release. Also see [VMware Horizon Client reporting out of date version](https://github.com/eucpilots/evergreen-module/issues/161).
 
 ### PaintDotNet
 

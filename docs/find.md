@@ -3,6 +3,8 @@ layout: doc
 ---
 # Find supported applications
 
+## Using Find-EvergreenApp
+
 `Find-EvergreenApp` is used to return a list of applications supported by Evergreen. For example, let's find out whether the Microsoft FSLogix Apps agent is supported by Evergreen:
 
 ```powershell

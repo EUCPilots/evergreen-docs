@@ -32,7 +32,7 @@ export default defineConfig({
       { text: 'Change log', link: '/changelog' }
     ],
 
-    logo: '/images/evergreenbulb.png',
+    logo: '/img/evergreenbulb.png',
     search: {
       provider: 'local'
     },
@@ -43,6 +43,7 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'About Evergreen', link: '/about' },
+          { text: 'How Evergreen works', link: '/how' },
           { text: 'Installing Evergreen', link: '/install' }
         ]
       },
@@ -50,13 +51,13 @@ export default defineConfig({
         text: 'Using Evergreen',
         collapsed: false,
         items: [
-          { text: 'Finding supported apps', link: '/find' },
+          { text: 'Update supported apps', link: '/updateapps' },
+          { text: 'Find supported apps', link: '/find' },
+          { text: 'Return app details', link: '/use' },
           { text: 'Download installers', link: '/save' },
           { text: 'Test URLs', link: '/test' },
           { text: 'Export version information', link: '/export' },
-          { text: 'Using Evergreen', link: '/use' },
-          { text: 'Example usage', link: '/examples' },
-          { text: 'Under the hood', link: '/under' }
+          { text: 'Example usage', link: '/examples' }
         ]
       },
       {
@@ -81,6 +82,8 @@ export default defineConfig({
         text: 'Resources',
         collapsed: false,
         items: [
+          { text: 'Under the hood', link: '/under' },
+          { text: 'Supported apps', link: '/supported-apps' },
           { text: 'Troubleshooting', link: '/troubleshoot' },
           { text: 'Known issues', link: '/issues' }
         ]

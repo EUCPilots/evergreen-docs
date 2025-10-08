@@ -3,6 +3,21 @@ layout: doc
 ---
 # Change log
 
+## 2510.2802.0-beta
+
+* Adds `-Release` to `Update-Evergreen` to enable updating Evergreen apps to a specified version
+* Adds `Expand-CabArchive` to support `Get-MicrosoftPowerAutomateDesktop`
+
+## 2509.2549.0-beta
+
+* Creates `Update-Evergreen` to download application functions and manifests from `evergreen-apps` repository
+* Removes application functions and manifests from the module
+* Deletes docs, because this has been moved to a seperate repo
+
+## 2509.2489
+
+* Fixes an issue where `MicrosoftOneDrive` would return `x64` architecture for an `x86` release
+
 ## 2508.2431
 
 * Update `OmnissaHorizonClient`, `FreedomScientificFusion`, `FreedomScientificJAWS`, `FreedomScientificZoomText` to use the Microsoft Edge user agent instead of the default Evergreen user agent
@@ -12,16 +27,17 @@ layout: doc
 * Fix download URL change in `OBSStudio` and `MicrosoftEdgeDriver`
 * Updates user agent for `OracleJava` apps
 * Reorder properties in `Microsoft.NET` for better standardisation
-* Creates a custom Evergreen user agent in this format: `Evergreen/<version> (https://github.com/aaronparker/evergreen; PowerShell <PowerShell version>; <OS platform)`
+* Creates a custom Evergreen user agent in this format: `Evergreen/<version> (https://github.com/eucpilots/evergreen-module; PowerShell <PowerShell version>; <OS platform)`
 
-Example: `Evergreen/2508.9999 (https://github.com/aaronparker/evergreen; PowerShell 7.5.2; macOS)`
+Example: `Evergreen/2508.9999 (https://github.com/eucpilots/evergreen-module; PowerShell 7.5.2; macOS)`
 
 This approach should achieve the following:
 
 * Ensures Evergreen can be identified on calls to target endpoints
 * Avoids the need to update the previous user agent (The default Microsoft Edge on Windows user agent was being used) - some vendor endpoints will block out of date user agents
 
-  This change introduces the following private functions:
+This change introduces the following private functions:
+
 * Get-EvergreenUserAgent
 * Get-ModuleVersion
 * Get-OSName
@@ -39,9 +55,9 @@ The following functions are updated to use the Evergreen user agent:
 
 ## 2507.2318
 
-* Updates `eduVPN` to support changes in move from GitHub to Codeberg [#832](https://github.com/aaronparker/evergreen/issues/832)
-* Updates `GhislerTotalCommander` to fix download URLs [#833](https://github.com/aaronparker/evergreen/issues/833)
-* Removes `AzureDataStudio` [#834](https://github.com/aaronparker/evergreen/issues/834) (See [What's happening to Azure Data Studio?](https://learn.microsoft.com/en-us/azure-data-studio/whats-happening-azure-data-studio))
+* Updates `eduVPN` to support changes in move from GitHub to Codeberg [#832](https://github.com/eucpilots/evergreen-module/issues/832)
+* Updates `GhislerTotalCommander` to fix download URLs [#833](https://github.com/eucpilots/evergreen-module/issues/833)
+* Removes `AzureDataStudio` [#834](https://github.com/eucpilots/evergreen-module/issues/834) (See [What's happening to Azure Data Studio?](https://learn.microsoft.com/en-us/azure-data-studio/whats-happening-azure-data-studio))
 
 ## 2506.2263
 
@@ -93,14 +109,14 @@ BREAKING CHANGES
 ## 2503.1859
 
 * Adds `BellSoftLibericaJDK23`
-* Fixes the download URL in `Fork` [#791](https://github.com/aaronparker/evergreen/issues/791)
-* Fixes an issue with `GitForWindows` where output it repeated [#802](https://github.com/aaronparker/evergreen/issues/802)
+* Fixes the download URL in `Fork` [#791](https://github.com/eucpilots/evergreen-module/issues/791)
+* Fixes an issue with `GitForWindows` where output it repeated [#802](https://github.com/eucpilots/evergreen-module/issues/802)
 * Fixes an issue with `MicrosoftWvdMultimediaRedirection`, `MicrosoftWvdRtcService` due to changes in the source URL
 * Removes `Filename` property from `MicrosoftWvdRemoteDesktop` because property is no longer required
 * Updates `FreedomScientificFusion`, `FreedomScientificJAWS`, `FreedomScientificZoomText` to add `Architecture` property
-* Updates `OmnissaHorizonClient` [#678](https://github.com/aaronparker/evergreen/issues/678)
-* Updates `PaintDotNet` to return `stable` and `beta` channels [#783](https://github.com/aaronparker/evergreen/issues/783) 
-* Updates default user agent in `TableauDesktop`, `TableauPrep`, `TableauReader` [#801](https://github.com/aaronparker/evergreen/issues/801)
+* Updates `OmnissaHorizonClient` [#678](https://github.com/eucpilots/evergreen-module/issues/678)
+* Updates `PaintDotNet` to return `stable` and `beta` channels [#783](https://github.com/eucpilots/evergreen-module/issues/783) 
+* Updates default user agent in `TableauDesktop`, `TableauPrep`, `TableauReader` [#801](https://github.com/eucpilots/evergreen-module/issues/801)
 * Updates default user agent for the module
 * Removes `RedHatOpenJDK11` because no data is returned from the API for this version
 
@@ -115,15 +131,15 @@ BREAKING CHANGES
 
 ## 2412.1727
 
-* Adds `FigmaDesktop` [#784](https://github.com/aaronparker/evergreen/issues/784)
+* Adds `FigmaDesktop` [#784](https://github.com/eucpilots/evergreen-module/issues/784)
 * Adds `ARM64` architecture to `GoogleChrome`
-* Changes the GitHub repo used for `PodmanDesktop` [#780](https://github.com/aaronparker/evergreen/issues/780)
-* Changes the update feed used for `TrackerSoftwarePDFXChangeEditor` [#782](https://github.com/aaronparker/evergreen/issues/782)
-* Changes the update feed used for `PaintDotNet` [#783](https://github.com/aaronparker/evergreen/issues/783)
+* Changes the GitHub repo used for `PodmanDesktop` [#780](https://github.com/eucpilots/evergreen-module/issues/780)
+* Changes the update feed used for `TrackerSoftwarePDFXChangeEditor` [#782](https://github.com/eucpilots/evergreen-module/issues/782)
+* Changes the update feed used for `PaintDotNet` [#783](https://github.com/eucpilots/evergreen-module/issues/783)
 
 ## 2412.1685
 
-* Fix an issue with the version number calculated in `QGIS` [#775](https://github.com/aaronparker/evergreen/issues/775)
+* Fix an issue with the version number calculated in `QGIS` [#775](https://github.com/eucpilots/evergreen-module/issues/775)
 
 ## 2411.1644
 
@@ -135,16 +151,16 @@ BREAKING CHANGES
 ## 2411.1604
 
 * Adds `mySQLConnectorNET`, `mySQLConnectorODBC`
-* Fixes an issue in `Gimp` to account for strings in the version number [#767](https://github.com/aaronparker/evergreen/issues/767)
+* Fixes an issue in `Gimp` to account for strings in the version number [#767](https://github.com/eucpilots/evergreen-module/issues/767)
 
 ## 2410.1565
 
-* Use a custom user agent in `Get-SourceForgeRepoRelease.ps1` [#763](https://github.com/aaronparker/evergreen/issues/763)
+* Use a custom user agent in `Get-SourceForgeRepoRelease.ps1` [#763](https://github.com/eucpilots/evergreen-module/issues/763)
 
 ## 2410.1527
 
-* Fix an issue in `JetBrainsDataGrip` [#757](https://github.com/aaronparker/evergreen/issues/757)
-* Update `FoxitReader` to return the latest installer. Note that this doesn't fix the version number [#756](https://github.com/aaronparker/evergreen/issues/756)
+* Fix an issue in `JetBrainsDataGrip` [#757](https://github.com/eucpilots/evergreen-module/issues/757)
+* Update `FoxitReader` to return the latest installer. Note that this doesn't fix the version number [#756](https://github.com/eucpilots/evergreen-module/issues/756)
 * Fix ErrorAction in `MicrosoftWindowsApp`
 
 ## 2410.1490
@@ -153,20 +169,20 @@ BREAKING CHANGES
 
 ## 2410.1454
 
-* Adds `MicrosoftWindowsApp`, `NextcloudDesktop` [#749](https://github.com/aaronparker/evergreen/issues/749), `Dropbox` [#292](https://github.com/aaronparker/evergreen/issues/292), `MSIXHero`
-* Updates `VMwareTools` to remove the `x86` architecture and add `ARM64` architecture [#751](https://github.com/aaronparker/evergreen/issues/751)
+* Adds `MicrosoftWindowsApp`, `NextcloudDesktop` [#749](https://github.com/eucpilots/evergreen-module/issues/749), `Dropbox` [#292](https://github.com/eucpilots/evergreen-module/issues/292), `MSIXHero`
+* Updates `VMwareTools` to remove the `x86` architecture and add `ARM64` architecture [#751](https://github.com/eucpilots/evergreen-module/issues/751)
 
 ## 2409.1419
 
 * Adds `NetPad`
-* Adds new `ConvertTo-DotNetVersionClass` - converts the `Version` number exported by `Get-EvergreenApp` to a .NET compliant version class [#717](https://github.com/aaronparker/evergreen/issues/717)
-* Adds `Get-GitHubRepoTag` to return an object of tags from a GitHub repository [#544](https://github.com/aaronparker/evergreen/issues/544)
-* Updates `AWLCLI` and `Npcap` to use `Get-GitHubRepoTag` and support proxy server connections [#544](https://github.com/aaronparker/evergreen/issues/544)
+* Adds new `ConvertTo-DotNetVersionClass` - converts the `Version` number exported by `Get-EvergreenApp` to a .NET compliant version class [#717](https://github.com/eucpilots/evergreen-module/issues/717)
+* Adds `Get-GitHubRepoTag` to return an object of tags from a GitHub repository [#544](https://github.com/eucpilots/evergreen-module/issues/544)
+* Updates `AWLCLI` and `Npcap` to use `Get-GitHubRepoTag` and support proxy server connections [#544](https://github.com/eucpilots/evergreen-module/issues/544)
 
 ## 2409.1385
 
-* Adds `OracleJava23`, `NavimaticsWinFSP` [#741](https://github.com/aaronparker/evergreen/issues/741)
-* Fixes an issue with `PositRStudio` due to change in update URL [#742](https://github.com/aaronparker/evergreen/issues/742)
+* Adds `OracleJava23`, `NavimaticsWinFSP` [#741](https://github.com/eucpilots/evergreen-module/issues/741)
+* Fixes an issue with `PositRStudio` due to change in update URL [#742](https://github.com/eucpilots/evergreen-module/issues/742)
 * Updates default user agent
 
 BREAKING CHANGES
@@ -175,17 +191,17 @@ BREAKING CHANGES
 
 ## 2409.1352
 
-* Update `7Zip` to `Get-GitHubRepoRelease` [#737](https://github.com/aaronparker/evergreen/issues/737)
+* Update `7Zip` to `Get-GitHubRepoRelease` [#737](https://github.com/eucpilots/evergreen-module/issues/737)
 * Update `TechSmithSnagit` to remove the  `x86` architecture
 * Fix an issue with `AdvancedInstaller`
 
 ## 2409.1320
 
 * Adds `AWSAppStreamClient`, `AdvancedInstaller`
-* Fixes an issue with `EgnyteDesktopApp` [#729](https://github.com/aaronparker/evergreen/issues/729)
-* Updates `FoxitReader` to account for a version number issue in the source feed [#732](https://github.com/aaronparker/evergreen/issues/732)
-* Updates `MozillaThunderbird` to address version mismatch [#735](https://github.com/aaronparker/evergreen/issues/735)
-* Updates `Zotero` to return additional processor architectures [#730](https://github.com/aaronparker/evergreen/issues/730)
+* Fixes an issue with `EgnyteDesktopApp` [#729](https://github.com/eucpilots/evergreen-module/issues/729)
+* Updates `FoxitReader` to account for a version number issue in the source feed [#732](https://github.com/eucpilots/evergreen-module/issues/732)
+* Updates `MozillaThunderbird` to address version mismatch [#735](https://github.com/eucpilots/evergreen-module/issues/735)
+* Updates `Zotero` to return additional processor architectures [#730](https://github.com/eucpilots/evergreen-module/issues/730)
 * Updates internal function `Resolve-MicrosoftFwLink` to reduce default redirects
 
 ## 2407.1289
@@ -205,19 +221,19 @@ BREAKING CHANGES
 
 ## 2407.1230
 
-* Updates `Save-EvergreenApp` to use a custom user agent for an identified list of URLs [#677](https://github.com/aaronparker/evergreen/issues/677)
+* Updates `Save-EvergreenApp` to use a custom user agent for an identified list of URLs [#677](https://github.com/eucpilots/evergreen-module/issues/677)
 * Updates `ScooterBeyondCompare` with additional languages
-* Updates `VideoLanVlcPlayer` [#704](https://github.com/aaronparker/evergreen/issues/704) [#158](https://github.com/aaronparker/evergreen/issues/158), `CitrixWorkspaceApp` [#578](https://github.com/aaronparker/evergreen/issues/578) [#298](https://github.com/aaronparker/evergreen/issues/298) to output warnings for known issues
+* Updates `VideoLanVlcPlayer` [#704](https://github.com/eucpilots/evergreen-module/issues/704) [#158](https://github.com/eucpilots/evergreen-module/issues/158), `CitrixWorkspaceApp` [#578](https://github.com/eucpilots/evergreen-module/issues/578) [#298](https://github.com/eucpilots/evergreen-module/issues/298) to output warnings for known issues
 * Updates `GoogleChrome`, `MicrosoftOneDrive`, `MozillaFirefox`, `MozillaThunderbird` to reorder output properties
 * Updates default user agent
 
 BREAKING CHANGES
 
-* Renames `diagrams.net` to `JGraphDrawIO` [#714](https://github.com/aaronparker/evergreen/issues/714)
+* Renames `diagrams.net` to `JGraphDrawIO` [#714](https://github.com/eucpilots/evergreen-module/issues/714)
 
 ## 2407.1202
 
-* Adds `AmazonCorretto8`, `AmazonCorretto11`, `AmazonCorretto16`, `AmazonCorretto17`, `AmazonCorretto20`, `AmazonCorretto21`, `AmazonCorretto22` [#711](https://github.com/aaronparker/evergreen/issues/711)
+* Adds `AmazonCorretto8`, `AmazonCorretto11`, `AmazonCorretto16`, `AmazonCorretto17`, `AmazonCorretto20`, `AmazonCorretto21`, `AmazonCorretto22` [#711](https://github.com/eucpilots/evergreen-module/issues/711)
 * Updates output properties in `AtlassianSourcetree`
 * Updates output properties in internal function `Get-GitHubRepoRelease`
 * Fixes an issue with the `Version` property in `AkeoRufusAlt`
@@ -226,20 +242,20 @@ BREAKING CHANGES
 BREAKING CHANGES
 
 * Removes `AmazonCorretto` - replaced with individual `AmazonCorretto`
-* Removes `OpenJDK` [#712](https://github.com/aaronparker/evergreen/issues/712)
+* Removes `OpenJDK` [#712](https://github.com/eucpilots/evergreen-module/issues/712)
 
 ## 2407.1175
 
-* Adds `AdoptiumTemurin22`, `BellSoftLibericaJDK21`, `BellSoftLibericaJDK22`, `ManicTimeClient` [#572](https://github.com/aaronparker/evergreen/issues/572)
+* Adds `AdoptiumTemurin22`, `BellSoftLibericaJDK21`, `BellSoftLibericaJDK22`, `ManicTimeClient` [#572](https://github.com/eucpilots/evergreen-module/issues/572)
 * Fixes an issue with `ProtonDrive` to account for duplicate keys in the update feed preventing conversion with `ConvertTo-Json`
 * Updates the URL used for `TelerikFiddlerClassic` to return the latest version
 * Updates `LibreOffice` to remove `Stable` release which was returning the same details from the `Latest` release only anyway
-* Removes `FileZilla` [#581](https://github.com/aaronparker/evergreen/issues/581)
+* Removes `FileZilla` [#581](https://github.com/eucpilots/evergreen-module/issues/581)
 
 ## 2407.1149
 
 * Adds `OmnissaHorizonClient `, `Elgato4KCaptureUtility`, `ElgatoAudioEffects`, `ElgatoCameraHub `, `ElgatoControlCenter`, `ElgatoEpocCam`, `ElgatoGameCapture`, `ElgatoStreamDeck`, `ElgatoVideoCapture`, `ElgatoWaveLink`
-* Fixes an issue with `MicrosoftAzureDataStudio` [#708](https://github.com/aaronparker/evergreen/issues/708)
+* Fixes an issue with `MicrosoftAzureDataStudio` [#708](https://github.com/eucpilots/evergreen-module/issues/708)
 
 BREAKING CHANGES
 
@@ -269,7 +285,7 @@ BREAKING CHANGES
 
 * Adds  `DockerCompose`
 * Updates `NETworkManager` to return new MSI installers
-* Updates `MicrosoftAzureCLI` to return `x64` and `x86` architectures [#691](https://github.com/aaronparker/evergreen/issues/691)
+* Updates `MicrosoftAzureCLI` to return `x64` and `x86` architectures [#691](https://github.com/eucpilots/evergreen-module/issues/691)
 * Fixes an issue with `GoogleChrome` where source data returns date value as an array
 * Minor updates to `MicrosoftWvdMultimediaRedirection` and `MicrosoftWvdRtcService`
 
@@ -280,32 +296,32 @@ BREAKING CHANGES
 ## 2405.1033
 
 * Adds `MicrosoftOpenJDK21`, `AdoptiumTemurin21`, `AzulZulu21`, `Proxyman`, `RedHatOpenJDK21`
-* Adds `MicrosoftODBCDriverForSQLServer17` [#685](https://github.com/aaronparker/evergreen/issues/685), `MicrosoftOLEDBDriverForSQLServer18` [#686](https://github.com/aaronparker/evergreen/issues/686)
-* Updates `MicrosoftODBCDriverForSQLServer` [#685](https://github.com/aaronparker/evergreen/issues/685), `MicrosoftOLEDBDriverForSQLServer18` [#686](https://github.com/aaronparker/evergreen/issues/686), `MicrosoftOLEDBDriverForSQLServer` [#686](https://github.com/aaronparker/evergreen/issues/686)
-* Updates `MicrosoftSsms` with new source URL that should ensure latest version is always found, and simplifies function code [#687](https://github.com/aaronparker/evergreen/issues/687)
+* Adds `MicrosoftODBCDriverForSQLServer17` [#685](https://github.com/eucpilots/evergreen-module/issues/685), `MicrosoftOLEDBDriverForSQLServer18` [#686](https://github.com/eucpilots/evergreen-module/issues/686)
+* Updates `MicrosoftODBCDriverForSQLServer` [#685](https://github.com/eucpilots/evergreen-module/issues/685), `MicrosoftOLEDBDriverForSQLServer18` [#686](https://github.com/eucpilots/evergreen-module/issues/686), `MicrosoftOLEDBDriverForSQLServer` [#686](https://github.com/eucpilots/evergreen-module/issues/686)
+* Updates `MicrosoftSsms` with new source URL that should ensure latest version is always found, and simplifies function code [#687](https://github.com/eucpilots/evergreen-module/issues/687)
 * Updates `Resolve-MicrosoftFwLink` to support more flexible queries
 
 ### Breaking Changes
 
-* Removes `VMwareHorizonClient`, `VMwareOSOptimizationTool`, `VMwareSDWANClient`, `VMwareWorkstationPlayer`, `VMwareWorkstationPro` [#678](https://github.com/aaronparker/evergreen/issues/678)
+* Removes `VMwareHorizonClient`, `VMwareOSOptimizationTool`, `VMwareSDWANClient`, `VMwareWorkstationPlayer`, `VMwareWorkstationPro` [#678](https://github.com/eucpilots/evergreen-module/issues/678)
 
 ## 2405.1013
 
 * Adds `AkeoRufusAlt`
-* Update `Gimp` with `Revision` property [#639](https://github.com/aaronparker/evergreen/issues/639)
-* Updates `MicrosoftOneDrive` to convert sha256 value from base64 to string [#481](https://github.com/aaronparker/evergreen/issues/481)
+* Update `Gimp` with `Revision` property [#639](https://github.com/eucpilots/evergreen-module/issues/639)
+* Updates `MicrosoftOneDrive` to convert sha256 value from base64 to string [#481](https://github.com/eucpilots/evergreen-module/issues/481)
 * Update `MestrelabMnova` to throw an error when update feed is not in the expected format
-* Fix an issue with `MozillaFirefox` [#676](https://github.com/aaronparker/evergreen/issues/676)
+* Fix an issue with `MozillaFirefox` [#676](https://github.com/eucpilots/evergreen-module/issues/676)
 * Adds `ConvertFrom-Base64String ` private function
 
 ## 2405.976
 
-* Adds `GoogleChromeForTesting`, `GoogleChromeHeadlessShell` [#674](https://github.com/aaronparker/evergreen/issues/674)
+* Adds `GoogleChromeForTesting`, `GoogleChromeHeadlessShell` [#674](https://github.com/eucpilots/evergreen-module/issues/674)
 * Updates `MozillaThunderbird` with human readable channel names, adds Beta channel, MSIX file types
 
 ### Breaking Changes
 
-* Removes `ChromiumChromeDriver` [#674](https://github.com/aaronparker/evergreen/issues/674)
+* Removes `ChromiumChromeDriver` [#674](https://github.com/eucpilots/evergreen-module/issues/674)
 
 ## 2405.976
 
@@ -313,26 +329,26 @@ BREAKING CHANGES
 * Updates `MozillaFirefox` with additional channels
 * Updates `MicrosoftAzureDataStudio` to throw if the update feed is unavailable
 * Updates `ProtonDrive` to throw if the update feed includes parsing issues
-* Updates `Get-SourceForgeRepoRelease` to use null UserAgent and resolve correct download hosts [#669](https://github.com/aaronparker/evergreen/issues/669)
+* Updates `Get-SourceForgeRepoRelease` to use null UserAgent and resolve correct download hosts [#669](https://github.com/eucpilots/evergreen-module/issues/669)
 * Updates `Resolve-InvokeWebRequest` with support for Headers, ability to set UserAgent to null
 * Fixes an issue with `AdobeConnect`
-* Fixes an issue with `McNeelRhino` [#670](https://github.com/aaronparker/evergreen/issues/670)
-* Fixes `TableauDesktop`, `TableauPrep`, `TableauReader` [#658](https://github.com/aaronparker/evergreen/issues/658)
-* Fixes an issue with `Resolve-SystemNetWebRequest` with ability to set UserAgent to null [#669](https://github.com/aaronparker/evergreen/issues/669)
+* Fixes an issue with `McNeelRhino` [#670](https://github.com/eucpilots/evergreen-module/issues/670)
+* Fixes `TableauDesktop`, `TableauPrep`, `TableauReader` [#658](https://github.com/eucpilots/evergreen-module/issues/658)
+* Fixes an issue with `Resolve-SystemNetWebRequest` with ability to set UserAgent to null [#669](https://github.com/eucpilots/evergreen-module/issues/669)
 * Adds a custom user agent to `Invoke-EvergreenApp` to improve reporting on Cloudflare Workers
 
 ### Breaking Changes
 
-* Changes values for `MozillaFirefox` to be human readable [#667](https://github.com/aaronparker/evergreen/issues/667) [#672](https://github.com/aaronparker/evergreen/issues/672)
+* Changes values for `MozillaFirefox` to be human readable [#667](https://github.com/eucpilots/evergreen-module/issues/667) [#672](https://github.com/eucpilots/evergreen-module/issues/672)
 
 ## 2405.959
 
-* Fix an issue with date/time conversion on Windows PowerShell for `GoogleChrome` [#668](https://github.com/aaronparker/evergreen/issues/668)
+* Fix an issue with date/time conversion on Windows PowerShell for `GoogleChrome` [#668](https://github.com/eucpilots/evergreen-module/issues/668)
 
 ## 2405.943
 
 * Update default user agent #642
-* Fix an issue with `Get-Architecture` returning `AMD64` [#663](https://github.com/aaronparker/evergreen/issues/663)
+* Fix an issue with `Get-Architecture` returning `AMD64` [#663](https://github.com/eucpilots/evergreen-module/issues/663)
 * Adds `Get-EvergreenAppFromApi`, `Start-EvergreenLibraryUpdate` aliases. Public functions will be renamed in a future release
 * Fix various issues with help URI links for public functions
 * Update help XML
@@ -355,28 +371,28 @@ BREAKING CHANGES
 ## 2404.901
 
 * Adds argument completer for `Get-EvergreenApp`
-* Updates the default user agent used by Evergreen to match Microsoft Edge [#642](https://github.com/aaronparker/evergreen/issues/642)
-* Adds `TeraTerm`, `SUSERancherDesktop` [#635](https://github.com/aaronparker/evergreen/issues/635), `GrafanaAgent` [#628](https://github.com/aaronparker/evergreen/issues/628), `PlexDesktop`, `PlexHTPC`, `PlexMediaServer` [#270](https://github.com/aaronparker/evergreen/issues/270), `Flameshot` [#597](https://github.com/aaronparker/evergreen/issues/597), `1PasswordCLI` [#589](https://github.com/aaronparker/evergreen/issues/589), `ProtonDrive` [#595](https://github.com/aaronparker/evergreen/issues/595)
-* Updates `MicrosoftTeams` to support Teams 2.0 (removes `MicrosoftTeamsPreview`), Adds `MicrosoftTeamsClassic` to return details of Teams 1.0 [#625](https://github.com/aaronparker/evergreen/issues/625)
-* Updates `Microsoft365Apps` to dynamically determine channel names and removed from hard coded channel details from the manifest [#650](https://github.com/aaronparker/evergreen/issues/650)
-* Fixes the source releases feed for `MicrosoftSsms` to return current releases [#651](https://github.com/aaronparker/evergreen/issues/651)
-* Updates various functions to use a consistent approach to enabling TLS 1.2 [#643](https://github.com/aaronparker/evergreen/issues/643)
+* Updates the default user agent used by Evergreen to match Microsoft Edge [#642](https://github.com/eucpilots/evergreen-module/issues/642)
+* Adds `TeraTerm`, `SUSERancherDesktop` [#635](https://github.com/eucpilots/evergreen-module/issues/635), `GrafanaAgent` [#628](https://github.com/eucpilots/evergreen-module/issues/628), `PlexDesktop`, `PlexHTPC`, `PlexMediaServer` [#270](https://github.com/eucpilots/evergreen-module/issues/270), `Flameshot` [#597](https://github.com/eucpilots/evergreen-module/issues/597), `1PasswordCLI` [#589](https://github.com/eucpilots/evergreen-module/issues/589), `ProtonDrive` [#595](https://github.com/eucpilots/evergreen-module/issues/595)
+* Updates `MicrosoftTeams` to support Teams 2.0 (removes `MicrosoftTeamsPreview`), Adds `MicrosoftTeamsClassic` to return details of Teams 1.0 [#625](https://github.com/eucpilots/evergreen-module/issues/625)
+* Updates `Microsoft365Apps` to dynamically determine channel names and removed from hard coded channel details from the manifest [#650](https://github.com/eucpilots/evergreen-module/issues/650)
+* Fixes the source releases feed for `MicrosoftSsms` to return current releases [#651](https://github.com/eucpilots/evergreen-module/issues/651)
+* Updates various functions to use a consistent approach to enabling TLS 1.2 [#643](https://github.com/eucpilots/evergreen-module/issues/643)
 * Fixes an issue with `KubernetesKubectl`
 * Fixes an issue with `ScooterBeyondCompare` to resolve an with XML conversion of the update source feed
 
 ## 2403.889
 
-* Adds `KubernetesKubectl` [#634](https://github.com/aaronparker/evergreen/issues/634), `ProtonVPN` [#596](https://github.com/aaronparker/evergreen/issues/596), `eduVPN`, `AdobeDigitalEditions` [#621](https://github.com/aaronparker/evergreen/issues/621), `ClarivateEndNote`, `DBBrowserforSQLite`, `JabraDirect`, `MicrosoftWSL`, `Npcap`, `PodmanDesktop`, `Podman`
-* Update URLs for `MicrosoftODBCDriverForSQLServer` and `MicrosoftOLEDBDriverForSQLServer` [#567](https://github.com/aaronparker/evergreen/issues/567)
-* Updates `Invoke-EvergreenLibraryUpdate` [#488](https://github.com/aaronparker/evergreen/issues/488) [#566](https://github.com/aaronparker/evergreen/pull/566)
+* Adds `KubernetesKubectl` [#634](https://github.com/eucpilots/evergreen-module/issues/634), `ProtonVPN` [#596](https://github.com/eucpilots/evergreen-module/issues/596), `eduVPN`, `AdobeDigitalEditions` [#621](https://github.com/eucpilots/evergreen-module/issues/621), `ClarivateEndNote`, `DBBrowserforSQLite`, `JabraDirect`, `MicrosoftWSL`, `Npcap`, `PodmanDesktop`, `Podman`
+* Update URLs for `MicrosoftODBCDriverForSQLServer` and `MicrosoftOLEDBDriverForSQLServer` [#567](https://github.com/eucpilots/evergreen-module/issues/567)
+* Updates `Invoke-EvergreenLibraryUpdate` [#488](https://github.com/eucpilots/evergreen-module/issues/488) [#566](https://github.com/eucpilots/evergreen-module/pull/566)
 * Updates `MicrosoftPowerShell` to return `msixbundle` file type
 * Fixes update source for `MasterPackager`
 * Address PSScriptAnalyzer issues
 
 ## 2312.878
 
-* Adds `CitrixShareFile` [#564](https://github.com/aaronparker/evergreen/issues/564), `ParallelsClient` [#577](https://github.com/aaronparker/evergreen/issues/577)
-* Updates `Microsoft.NET` for all available supported channels [#583](https://github.com/aaronparker/evergreen/issues/583)
+* Adds `CitrixShareFile` [#564](https://github.com/eucpilots/evergreen-module/issues/564), `ParallelsClient` [#577](https://github.com/eucpilots/evergreen-module/issues/577)
+* Updates `Microsoft.NET` for all available supported channels [#583](https://github.com/eucpilots/evergreen-module/issues/583)
 * Updates `mySQLWorkbench` download URL
 * Updates source URL used in `MicrosoftSsms` to fix version numbers
 * Updates `DruvainSyncClient` for Cloud and GovCloud releases
@@ -385,53 +401,53 @@ BREAKING CHANGES
 ## 2310.868
 
 * Adds `OracleJava21`, `ZoomVDI`
-* Updates `RStudio` to use the Stable release feed instead of the Dailies feed [#554](https://github.com/aaronparker/evergreen/issues/554)
-* Updates `Zoom` to use the download JSON found in the Zoom downloads page [#555](https://github.com/aaronparker/evergreen/issues/555)
-* Fixes an issue with `OracleJava17` (and all Oracle Java apps) where a later version was returned instead of the release version [#558](https://github.com/aaronparker/evergreen/issues/558)
+* Updates `RStudio` to use the Stable release feed instead of the Dailies feed [#554](https://github.com/eucpilots/evergreen-module/issues/554)
+* Updates `Zoom` to use the download JSON found in the Zoom downloads page [#555](https://github.com/eucpilots/evergreen-module/issues/555)
+* Fixes an issue with `OracleJava17` (and all Oracle Java apps) where a later version was returned instead of the release version [#558](https://github.com/eucpilots/evergreen-module/issues/558)
 
 ### Breaking Changes
 
-* `Zoom` has been split into `Zoom` and `ZoomVDI`. These functions also provide different property values. [#556](https://github.com/aaronparker/evergreen/discussions/556)
+* `Zoom` has been split into `Zoom` and `ZoomVDI`. These functions also provide different property values. [#556](https://github.com/eucpilots/evergreen-module/discussions/556)
 
 ## 2309.859
 
-* Adds `OracleJava20`, `OracleJava17` [#381](https://github.com/aaronparker/evergreen/issues/381)
+* Adds `OracleJava20`, `OracleJava17` [#381](https://github.com/eucpilots/evergreen-module/issues/381)
 * Adds `Get-VMwareSDWANClient`, `MicrosoftODBCDriverForSQLServer`, `MicrosoftOLEDBDriverForSQLServer`
-* Updates `GoogleChrome` to address missing `x86` installers [#550](https://github.com/aaronparker/evergreen/issues/550)
-* Updates `GhislerTotalCommander` to address version and URL issue [#552](https://github.com/aaronparker/evergreen/issues/552)
-* Updates `GitForWindows` to address version string issue [#511](https://github.com/aaronparker/evergreen/issues/511)
+* Updates `GoogleChrome` to address missing `x86` installers [#550](https://github.com/eucpilots/evergreen-module/issues/550)
+* Updates `GhislerTotalCommander` to address version and URL issue [#552](https://github.com/eucpilots/evergreen-module/issues/552)
+* Updates `GitForWindows` to address version string issue [#511](https://github.com/eucpilots/evergreen-module/issues/511)
 * Optimises shared code for Hashicorp apps
 * Optimises shared code for Opera apps
 * Optimises shared code for Oracle Java apps
-* Optimises shared code for VMware apps [#474](https://github.com/aaronparker/evergreen/issues/474)
+* Optimises shared code for VMware apps [#474](https://github.com/eucpilots/evergreen-module/issues/474)
 * Updates `MicrosoftVisualStudio` to return release `17`
 
 ## 2309.850
 
-* Adds `UnitySetup` [#245](https://github.com/aaronparker/evergreen/issues/245)
-* Updates `GoogleChrome` to address retirement of update source [#546](https://github.com/aaronparker/evergreen/issues/546)
-* Updates `MicrosoftOneDrive` to add the `Throttle` property to assist filtering the current rollout version [#547](https://github.com/aaronparker/evergreen/issues/547)
+* Adds `UnitySetup` [#245](https://github.com/eucpilots/evergreen-module/issues/245)
+* Updates `GoogleChrome` to address retirement of update source [#546](https://github.com/eucpilots/evergreen-module/issues/546)
+* Updates `MicrosoftOneDrive` to add the `Throttle` property to assist filtering the current rollout version [#547](https://github.com/eucpilots/evergreen-module/issues/547)
 * Removes `MicrosoftOpenJDK16`, `MicrosoftOpenJDK8` as binaries are not available
 
 ## 2309.840
 
-* Adds `BellSoftLibericaJDK20`, `BellSoftLibericaJDK17`, `BellSoftLibericaJDK11`, `BellSoftLibericaJDK8` [#539](https://github.com/aaronparker/evergreen/issues/539)
-* Adds `AdoptiumTemurin20`, `AdoptiumTemurin19` [#540](https://github.com/aaronparker/evergreen/issues/540)
-* Adds `MicrosoftOpenJDK17`, `MicrosoftOpenJDK16`, `MicrosoftOpenJDK11`, `MicrosoftOpenJDK8` [#540](https://github.com/aaronparker/evergreen/issues/540)
-* Adds `AzulZulu17`, `AzulZulu11`, `AzulZulu8` [#540](https://github.com/aaronparker/evergreen/issues/540)
-* Adds `RedHatOpenJDK17`, `RedHatOpenJDK8`, `RedHatOpenJDK11` [#540](https://github.com/aaronparker/evergreen/issues/540)
+* Adds `BellSoftLibericaJDK20`, `BellSoftLibericaJDK17`, `BellSoftLibericaJDK11`, `BellSoftLibericaJDK8` [#539](https://github.com/eucpilots/evergreen-module/issues/539)
+* Adds `AdoptiumTemurin20`, `AdoptiumTemurin19` [#540](https://github.com/eucpilots/evergreen-module/issues/540)
+* Adds `MicrosoftOpenJDK17`, `MicrosoftOpenJDK16`, `MicrosoftOpenJDK11`, `MicrosoftOpenJDK8` [#540](https://github.com/eucpilots/evergreen-module/issues/540)
+* Adds `AzulZulu17`, `AzulZulu11`, `AzulZulu8` [#540](https://github.com/eucpilots/evergreen-module/issues/540)
+* Adds `RedHatOpenJDK17`, `RedHatOpenJDK8`, `RedHatOpenJDK11` [#540](https://github.com/eucpilots/evergreen-module/issues/540)
 * Updates `AdoptiumTemurin` apps to optimise shared code
-* Removes `AdoptOpenJDK11`, `AdoptOpenJDK16`, `AdoptOpenJDK8`, `AdoptOpenJDKIcedTeaWeb`, `AdoptOpenJDKSemuru11`, `AdoptOpenJDKSemuru17`, `AdoptOpenJDKSemuru18`, `AdoptOpenJDKSemuru8` [#540](https://github.com/aaronparker/evergreen/issues/540)
+* Removes `AdoptOpenJDK11`, `AdoptOpenJDK16`, `AdoptOpenJDK8`, `AdoptOpenJDKIcedTeaWeb`, `AdoptOpenJDKSemuru11`, `AdoptOpenJDKSemuru17`, `AdoptOpenJDKSemuru18`, `AdoptOpenJDKSemuru8` [#540](https://github.com/eucpilots/evergreen-module/issues/540)
 
 ## 2308.831
 
-* Adds `GoogleChromeDriver` [#537](https://github.com/aaronparker/evergreen/issues/537), `ControlUpRemoteDX`
+* Adds `GoogleChromeDriver` [#537](https://github.com/eucpilots/evergreen-module/issues/537), `ControlUpRemoteDX`
 * Adds `Get-JetBrainsYouTrack`, `Get-JetBrainsGateway`, `Get-JetBrainsHub`, `Get-JetBrainsTeamCity`, `JetBrainsToolbox`
 * Adds internal function `Get-JetBrainsApp` for shared code for JetBrains functions
 
 ## 2308.823
 
-* Adds `DruvainSyncClient` [#524](https://github.com/aaronparker/evergreen/issues/524), `JetBrainsCLion`, `JetBrainsDataGrip`, `JetBrainsDataSpell`, `JetBrainsGoLand`, `JetBrainsPhpStorm`, `JetBrainsRubyMine`, `JetBrainsWebStorm`
+* Adds `DruvainSyncClient` [#524](https://github.com/eucpilots/evergreen-module/issues/524), `JetBrainsCLion`, `JetBrainsDataGrip`, `JetBrainsDataSpell`, `JetBrainsGoLand`, `JetBrainsPhpStorm`, `JetBrainsRubyMine`, `JetBrainsWebStorm`
 * Updates `JetBrainsIntelliJIDEA`, `JetBrainsPyCharm`
 * Updates `OpenLens` with additional installer types
 
@@ -441,35 +457,35 @@ BREAKING CHANGES
 
 ## 2307.810
 
-* Adds `NodeJs` [#510](https://github.com/aaronparker/evergreen/issues/510), `GeoGebraClassic`, `LehrerOffice`, `ThymioSuite`, `TPGiColourContrastAnalyser` [#519](https://github.com/aaronparker/evergreen/issues/519)
-* Fixes an issue with `MicrosoftVisualStudioCode` [#518](https://github.com/aaronparker/evergreen/issues/518)
+* Adds `NodeJs` [#510](https://github.com/eucpilots/evergreen-module/issues/510), `GeoGebraClassic`, `LehrerOffice`, `ThymioSuite`, `TPGiColourContrastAnalyser` [#519](https://github.com/eucpilots/evergreen-module/issues/519)
+* Fixes an issue with `MicrosoftVisualStudioCode` [#518](https://github.com/eucpilots/evergreen-module/issues/518)
 * Fixes an issue with `jq` due to a change in repository
-* Removes `CitrixVMTools` - Citrix VM Tools requires a login to download [#512](https://github.com/aaronparker/evergreen/issues/512)
+* Removes `CitrixVMTools` - Citrix VM Tools requires a login to download [#512](https://github.com/eucpilots/evergreen-module/issues/512)
 * Updates `Get-EvergreenApp` to return clearer output when an application function fails
 
 ## 2305.801
 
-* Add `mySQLWorkbench` [#499](https://github.com/aaronparker/evergreen/issues/499), `MicrosoftAzureCLI` [#506](https://github.com/aaronparker/evergreen/issues/506)
-* Adds MSI file type to `Win32OpenSSH` [#505](https://github.com/aaronparker/evergreen/issues/505)
-* Adds Windows Server Hosting and ASP Net Core Runtimes to `Microsoft.NET` [#501](https://github.com/aaronparker/evergreen/issues/501)
-* Update `Get-EvergreenLibraryApp` to account for non-standard version numbers [#502](https://github.com/aaronparker/evergreen/issues/502)
+* Add `mySQLWorkbench` [#499](https://github.com/eucpilots/evergreen-module/issues/499), `MicrosoftAzureCLI` [#506](https://github.com/eucpilots/evergreen-module/issues/506)
+* Adds MSI file type to `Win32OpenSSH` [#505](https://github.com/eucpilots/evergreen-module/issues/505)
+* Adds Windows Server Hosting and ASP Net Core Runtimes to `Microsoft.NET` [#501](https://github.com/eucpilots/evergreen-module/issues/501)
+* Update `Get-EvergreenLibraryApp` to account for non-standard version numbers [#502](https://github.com/eucpilots/evergreen-module/issues/502)
 * Update `Get-GitHubRepoRelease` to support finding a version number from repository tags
-* Fix a duplicate object issue in `Anaconda` [#503](https://github.com/aaronparker/evergreen/issues/503)
-* Fix an issue in `ChromiumChromeDriver` where the version doesn't match Google Chrome [#500](https://github.com/aaronparker/evergreen/issues/500)
-* Removes version `3.1` from `Microsoft.NET` [#507](https://github.com/aaronparker/evergreen/issues/507)
+* Fix a duplicate object issue in `Anaconda` [#503](https://github.com/eucpilots/evergreen-module/issues/503)
+* Fix an issue in `ChromiumChromeDriver` where the version doesn't match Google Chrome [#500](https://github.com/eucpilots/evergreen-module/issues/500)
+* Removes version `3.1` from `Microsoft.NET` [#507](https://github.com/eucpilots/evergreen-module/issues/507)
 
 ## 2305.798
 
-* Adds `OCSInventoryWindowsAgent` [#496](https://github.com/aaronparker/evergreen/issues/496), `GoogleDrive` [#480](https://github.com/aaronparker/evergreen/issues/480), `gsudo` [#464](https://github.com/aaronparker/evergreen/issues/464)
-* Removes HDX RTME from `CitrixWorkspaceApp` [#493](https://github.com/aaronparker/evergreen/issues/493)
+* Adds `OCSInventoryWindowsAgent` [#496](https://github.com/eucpilots/evergreen-module/issues/496), `GoogleDrive` [#480](https://github.com/eucpilots/evergreen-module/issues/480), `gsudo` [#464](https://github.com/eucpilots/evergreen-module/issues/464)
+* Removes HDX RTME from `CitrixWorkspaceApp` [#493](https://github.com/eucpilots/evergreen-module/issues/493)
 * Fixes an issue with the `-Body` parameter on the internal function `Invoke-RestMethodWrapper`
 
 ## 2305.795
 
-* Fixes an issue with `MicrosoftWvdInfraAgent` where the source no longer returns the download size [#490](https://github.com/aaronparker/evergreen/issues/490)
+* Fixes an issue with `MicrosoftWvdInfraAgent` where the source no longer returns the download size [#490](https://github.com/eucpilots/evergreen-module/issues/490)
 * Updates private function `GitHubRepoRelease` to return a new property `InstallerType` with values for `Portable`, `User`, or `Debug` based on the installer type. This property has a default value of `Default` where none of the other types are supported
 * Adds private function `Get-InstallerType` to determine the installer type
-* Fixes an issue with `Export-EvergreenApp` where the version property is not a proper version number [#491](https://github.com/aaronparker/evergreen/issues/491)
+* Fixes an issue with `Export-EvergreenApp` where the version property is not a proper version number [#491](https://github.com/eucpilots/evergreen-module/issues/491)
 * Some small code improvements in public functions
 
 ## 2305.793
@@ -478,19 +494,19 @@ BREAKING CHANGES
 
 ## 2304.791
 
-* Fix an issue in `Get-SourceForgeRepoRelease.ps1` - fix an issue introduced in `2304.790` on Windows PowerShell where URLs are being returned with `\` instead of `/` - updates the approach to building the file URL path [#483](https://github.com/aaronparker/evergreen/issues/483)
+* Fix an issue in `Get-SourceForgeRepoRelease.ps1` - fix an issue introduced in `2304.790` on Windows PowerShell where URLs are being returned with `\` instead of `/` - updates the approach to building the file URL path [#483](https://github.com/eucpilots/evergreen-module/issues/483)
 
 ## 2304.790
 
 * Adds `MicrosoftTeamsPreview` which will return versions and installers for the Microsoft Teams preview. **Note**: this function will change in a future release once this version of Teams is out of preview
 * Adds `ARM64` architecture to `MicrosoftOneDrive`
 * Updates `Minitab` by removing version 19 and adding version 21
-* Updates internal function `Get-SourceForgeRepoRelease` to determine a download mirror and return that in URLs [#483](https://github.com/aaronparker/evergreen/issues/483)
+* Updates internal function `Get-SourceForgeRepoRelease` to determine a download mirror and return that in URLs [#483](https://github.com/eucpilots/evergreen-module/issues/483)
 
 ## 2303.789
 
-* Adds `GoToConnect` [#469](https://github.com/aaronparker/evergreen/issues/469), `MicrosoftAzurePipelinesAgent` [#472](https://github.com/aaronparker/evergreen/issues/472), `AutodeskFusion360`, `GoToConnect` [#469](https://github.com/aaronparker/evergreen/issues/469), `PDFArranger` [#471](https://github.com/aaronparker/evergreen/issues/471)
-* Adds a temporary fix for `VMwareWorkstationPlayer`, and `VMwareWorkstationPro` with new download URLs [#474](https://github.com/aaronparker/evergreen/issues/474)
+* Adds `GoToConnect` [#469](https://github.com/eucpilots/evergreen-module/issues/469), `MicrosoftAzurePipelinesAgent` [#472](https://github.com/eucpilots/evergreen-module/issues/472), `AutodeskFusion360`, `GoToConnect` [#469](https://github.com/eucpilots/evergreen-module/issues/469), `PDFArranger` [#471](https://github.com/eucpilots/evergreen-module/issues/471)
+* Adds a temporary fix for `VMwareWorkstationPlayer`, and `VMwareWorkstationPro` with new download URLs [#474](https://github.com/eucpilots/evergreen-module/issues/474)
 
 ### Breaking Changes
 
@@ -499,16 +515,16 @@ BREAKING CHANGES
 ## 2303.788
 
 * Adds `ResponsivelyApp`
-* Addresses a change in source update data for `VMwareHorizonClient` [#460](https://github.com/aaronparker/evergreen/issues/460)
-* Fixes an issue in `Export-EvergreenApp` [#463](https://github.com/aaronparker/evergreen/issues/463)
+* Addresses a change in source update data for `VMwareHorizonClient` [#460](https://github.com/eucpilots/evergreen-module/issues/460)
+* Fixes an issue in `Export-EvergreenApp` [#463](https://github.com/eucpilots/evergreen-module/issues/463)
 * Fixes an issue with `AWSCLI` where the incorrect version number would be returned
-* Fixes an issue with ESET applications where the version number for a specific language can be higher than other languages, and only releases for a single language is returned [#466](https://github.com/aaronparker/evergreen/issues/466)
+* Fixes an issue with ESET applications where the version number for a specific language can be higher than other languages, and only releases for a single language is returned [#466](https://github.com/eucpilots/evergreen-module/issues/466)
 * Reverts changes to the URLs used by `OctopusTentacle`
-* Fix an issue with incorrect application name and URLs in `MicrosoftOutlook` [#465](https://github.com/aaronparker/evergreen/issues/465)
+* Fix an issue with incorrect application name and URLs in `MicrosoftOutlook` [#465](https://github.com/eucpilots/evergreen-module/issues/465)
 
 ## 2301.787
 
-* Fix an issue in `Resolve-InvokeWebRequest` where a throw would only occur under Windows PowerShell preventing app functions that require loops to exit without returning data [#452](https://github.com/aaronparker/evergreen/issues/452)
+* Fix an issue in `Resolve-InvokeWebRequest` where a throw would only occur under Windows PowerShell preventing app functions that require loops to exit without returning data [#452](https://github.com/eucpilots/evergreen-module/issues/452)
 * Fix an issue in `Get-EvergreenApp` where null was sent to Write-Information
 
 ## 2301.786
@@ -523,7 +539,7 @@ BREAKING CHANGES
 
 ## 2301.767
 
-* Fixes an issue with `OBSStudio` where the incorrect URI was returned where build number equals 0 [#445](https://github.com/aaronparker/evergreen/issues/445)
+* Fixes an issue with `OBSStudio` where the incorrect URI was returned where build number equals 0 [#445](https://github.com/eucpilots/evergreen-module/issues/445)
 * Updates `Invoke-EvergreenApp` to check for supported applications before posting a request
 * Updates `MozillaFirefox` to suppress errors and warning when attempting to return installers for specific languages
 * Updates various private functions to ensure consistent use of `throw` when encountering an error
@@ -531,8 +547,8 @@ BREAKING CHANGES
 ## 2301.717
 
 * Fixes filename case for `AppVentiX` which was causing issues when run on Linux
-* Remove the use of the `-Depth` parameter when used with `ConvertFrom-Json` as this is not supported on PowerShell 5.1 [#442](https://github.com/aaronparker/evergreen/issues/442)
-* Code optimisations for various functions via improved Pester tests and code coverage review ([CodeCov](https://app.codecov.io/gh/aaronparker/evergreen)) including removing code that would never be executed under normal circumstances
+* Remove the use of the `-Depth` parameter when used with `ConvertFrom-Json` as this is not supported on PowerShell 5.1 [#442](https://github.com/eucpilots/evergreen-module/issues/442)
+* Code optimisations for various functions via improved Pester tests and code coverage review ([CodeCov](https://app.codecov.io/gh/eucpilots/evergreen-module)) including removing code that would never be executed under normal circumstances
 
 ## 2212.715
 
@@ -541,29 +557,29 @@ BREAKING CHANGES
 
 ## 2212.709
 
-* Adds `NanaZip` [#430](https://github.com/aaronparker/evergreen/issues/430)
-* Adds parameter `-UserAgent` to `Save-EvergreenApp` [#437](https://github.com/aaronparker/evergreen/issues/437) [#436](https://github.com/aaronparker/evergreen/issues/436)
+* Adds `NanaZip` [#430](https://github.com/eucpilots/evergreen-module/issues/430)
+* Adds parameter `-UserAgent` to `Save-EvergreenApp` [#437](https://github.com/eucpilots/evergreen-module/issues/437) [#436](https://github.com/eucpilots/evergreen-module/issues/436)
 
 ## 2212.704
 
 * Adds `GitHubDesktop`
-* Fixes `GhislerTotalCommander` due to change in version number format [#423](https://github.com/aaronparker/evergreen/issues/423)
+* Fixes `GhislerTotalCommander` due to change in version number format [#423](https://github.com/eucpilots/evergreen-module/issues/423)
 * Updates `DockerDesktop` with release type. Switches installers from MSI to supported EXE installers
 * Updates `Zoom` with Universal VDI and AVD plug-ins
 
 ## 2211.697
 
-* Fixes an issue with returning data for `MicrosoftWvdMultimediaRedirection` due to a change in the Microsoft source [#418](https://github.com/aaronparker/evergreen/issues/418). **Note**: due to a change in the source file name, determining the version is difficult, thus the version string will be returned as-is
+* Fixes an issue with returning data for `MicrosoftWvdMultimediaRedirection` due to a change in the Microsoft source [#418](https://github.com/eucpilots/evergreen-module/issues/418). **Note**: due to a change in the source file name, determining the version is difficult, thus the version string will be returned as-is
 
 ## 2211.694
 
-* Adds `XnSoftXnViewMP`, `XnSoftXnConvert` [#416](https://github.com/aaronparker/evergreen/issues/416), `KDiff3`
+* Adds `XnSoftXnViewMP`, `XnSoftXnConvert` [#416](https://github.com/eucpilots/evergreen-module/issues/416), `KDiff3`
 * Adds `MicrosoftTerminal`, `AWSCLI`, `YubicoAuthenticator`
 
 ## 2211.686
 
-* Adds `SafingPortmaster`, `VMPlexWorkstation`, `AdoptOpenJDKIcedTeaWeb`, `AdoptOpenJDKSemuru18`, `AdoptOpenJDKSemuru17`, `AdoptOpenJDKSemuru11`, `AdoptOpenJDKSemuru8`, `AirtameApp`, `MicrosoftAzureWindowsVMAgent` [#413](https://github.com/aaronparker/evergreen/issues/413)
-* Adds `-SkipCertificateCheck` parameter to `Get-EvergreenApp` - allows for ignoring certificate errors when checking for application updates. Useful for when a vendor forgets to renew a certificate [#412](https://github.com/aaronparker/evergreen/issues/412); however, data returned should be validated
+* Adds `SafingPortmaster`, `VMPlexWorkstation`, `AdoptOpenJDKIcedTeaWeb`, `AdoptOpenJDKSemuru18`, `AdoptOpenJDKSemuru17`, `AdoptOpenJDKSemuru11`, `AdoptOpenJDKSemuru8`, `AirtameApp`, `MicrosoftAzureWindowsVMAgent` [#413](https://github.com/eucpilots/evergreen-module/issues/413)
+* Adds `-SkipCertificateCheck` parameter to `Get-EvergreenApp` - allows for ignoring certificate errors when checking for application updates. Useful for when a vendor forgets to renew a certificate [#412](https://github.com/eucpilots/evergreen-module/issues/412); however, data returned should be validated
 * Fixes an issue with `FoxitReader` and `FoxitPDFEditor` when resolving the installer URI
 
 ## 2210.676
@@ -574,49 +590,49 @@ BREAKING CHANGES
 ## 2210.674
 
 * Adds `ProgressChefInfraClient`, `ProgressChefInSpec`, `ProgressChefWorkstation`
-* Adds `ESETSecureAuthentication`, `ESETEndpointAntivirus`, `ESETEndpointSecurity`, `ESETFullDiskEncryption`, `ESETInspectConnector`, `ESETPROTECTServer`, `ESETSecureAuthentication`, `ESETServerSecurity` [#347](https://github.com/aaronparker/evergreen/issues/347)
-* Updates `WinMerge` to query application updates from GitHub [#404](https://github.com/aaronparker/evergreen/issues/404)
+* Adds `ESETSecureAuthentication`, `ESETEndpointAntivirus`, `ESETEndpointSecurity`, `ESETFullDiskEncryption`, `ESETInspectConnector`, `ESETPROTECTServer`, `ESETSecureAuthentication`, `ESETServerSecurity` [#347](https://github.com/eucpilots/evergreen-module/issues/347)
+* Updates `WinMerge` to query application updates from GitHub [#404](https://github.com/eucpilots/evergreen-module/issues/404)
 * Adds proxy server support for the following functions - `Get-EvergreenApp`, `Save-EvergreenApp`, `Invoke-EvergreenLibraryUpdate`. Adds `-Proxy` and `-ProxyCredential` arguments. `Get-EvergreenApp` sets an environment variable for the proxy server address and credential for use by internal app and private functions. `Save-EvergreenApp` and `Invoke-EvergreenLibraryUpdate` either use these parameters directly or pass the parameters to other functions
-* Fix spelling on `Microsoft365Apps` channels [#406](https://github.com/aaronparker/evergreen/issues/406)
+* Fix spelling on `Microsoft365Apps` channels [#406](https://github.com/eucpilots/evergreen-module/issues/406)
 
 ## 2210.661
 
-* Adds `OpenLens`, `MicrosoftOutlook`, `AWSSAMCLI`, `ChromiumChromeDriver` [#375](https://github.com/aaronparker/evergreen/issues/375), `GitExtensions`, `KeeWeb`, `Maximus5ConEmu`
+* Adds `OpenLens`, `MicrosoftOutlook`, `AWSSAMCLI`, `ChromiumChromeDriver` [#375](https://github.com/eucpilots/evergreen-module/issues/375), `GitExtensions`, `KeeWeb`, `Maximus5ConEmu`
 * Updates `OracleVirtualBox` with release channels - `STABLE`, `LATEST`, `BETA`
 * Updates `AdobeAcrobatProStdDC` to address an issue with the source query, and adds download URIs for `x86`
-* Fixes `MicrosoftWvdMultimediaRedirection` where the source URL has changed [#401](https://github.com/aaronparker/evergreen/issues/401)
+* Fixes `MicrosoftWvdMultimediaRedirection` where the source URL has changed [#401](https://github.com/eucpilots/evergreen-module/issues/401)
 
 ## 2210.645
 
-* Adds `OnlyOfficeDesktopEditors`, `OperaCryptoBrowser`. `AdobeConnect` [#382](https://github.com/aaronparker/evergreen/issues/382)
-* Updates channels for `OperaBrowser` [#299](https://github.com/aaronparker/evergreen/issues/299)
-* Updates property output for `OperaBrowser` and `OperaGXBrowser` [#299](https://github.com/aaronparker/evergreen/issues/299)
+* Adds `OnlyOfficeDesktopEditors`, `OperaCryptoBrowser`. `AdobeConnect` [#382](https://github.com/eucpilots/evergreen-module/issues/382)
+* Updates channels for `OperaBrowser` [#299](https://github.com/eucpilots/evergreen-module/issues/299)
+* Updates property output for `OperaBrowser` and `OperaGXBrowser` [#299](https://github.com/eucpilots/evergreen-module/issues/299)
 
 ## 2209.641
 
-* Adds `PiriformCCleanerFree` [#291](https://github.com/aaronparker/evergreen/issues/291), `RizonesoftNotepad3`, `ZorgmailVeiligVerzendenAddin`, `SoberLemurPDFSamBasic` [#390](https://github.com/aaronparker/evergreen/issues/390)
-* Updates `Zoom` with additional installers [#377](https://github.com/aaronparker/evergreen/issues/377)
+* Adds `PiriformCCleanerFree` [#291](https://github.com/eucpilots/evergreen-module/issues/291), `RizonesoftNotepad3`, `ZorgmailVeiligVerzendenAddin`, `SoberLemurPDFSamBasic` [#390](https://github.com/eucpilots/evergreen-module/issues/390)
+* Updates `Zoom` with additional installers [#377](https://github.com/eucpilots/evergreen-module/issues/377)
 * Updates `AdobeAcrobat` with the 64-bit MUI update
 * Fixes missing manifest for `ConnectionExperienceIndicator`
-* Updates `MozillaFirefox` with the `FIREFOX_ESR_NEXT` channel [#383](https://github.com/aaronparker/evergreen/issues/383)
+* Updates `MozillaFirefox` with the `FIREFOX_ESR_NEXT` channel [#383](https://github.com/eucpilots/evergreen-module/issues/383)
 
 ## 2209.629
 
-* Adds `TrackerSoftwarePDFXChangeEditor` [#371](https://github.com/aaronparker/evergreen/issues/371), `MozillaGeckoDriver` [#375](https://github.com/aaronparker/evergreen/issues/375)
+* Adds `TrackerSoftwarePDFXChangeEditor` [#371](https://github.com/eucpilots/evergreen-module/issues/371), `MozillaGeckoDriver` [#375](https://github.com/eucpilots/evergreen-module/issues/375)
 * Adds additional release rings for `MicrosoftTeams`
 * Updates `MicrosoftOneDrive` to better handle the update source that returns BOM characters without having to perform a find/replace
-* Updates public functions for better support for `-WhatIf` [#372](https://github.com/aaronparker/evergreen/issues/372)
+* Updates public functions for better support for `-WhatIf` [#372](https://github.com/eucpilots/evergreen-module/issues/372)
 
 ## 2209.622
 
-* Updates `BitwardenDesktop` to fix an issue with a change in GitHub repositories [#365](https://github.com/aaronparker/evergreen/issues/365)
-* Updates `VMwareTools` to address returning the latest Tools version where that version is not yet bundled with ESXi. [#336](https://github.com/aaronparker/evergreen/issues/336)
-* Updates `PDFForgePDFCreator` to change the source location for updates and ensure it returns the current version [#368](https://github.com/aaronparker/evergreen/issues/368)
+* Updates `BitwardenDesktop` to fix an issue with a change in GitHub repositories [#365](https://github.com/eucpilots/evergreen-module/issues/365)
+* Updates `VMwareTools` to address returning the latest Tools version where that version is not yet bundled with ESXi. [#336](https://github.com/eucpilots/evergreen-module/issues/336)
+* Updates `PDFForgePDFCreator` to change the source location for updates and ensure it returns the current version [#368](https://github.com/eucpilots/evergreen-module/issues/368)
 
 ## 2208.618
 
 * Updates `Zoom` to add `x64` and `ARM64` support for meetings clients. Updates `Platform` property to better identify application installer
-* Updates `Invoke-EvergreenLibraryUpdate` to add installer path to application version information JSON file [#362](https://github.com/aaronparker/evergreen/discussions/362)
+* Updates `Invoke-EvergreenLibraryUpdate` to add installer path to application version information JSON file [#362](https://github.com/eucpilots/evergreen-module/discussions/362)
 
 ### Breaking Changes
 
@@ -624,10 +640,10 @@ BREAKING CHANGES
 
 ## 2207.609
 
-* Adds functions to create an Evergreen library - a library is a directory that contains application installers and allows you to keep multiple versions. Functions are `New-EvergreenLibrary`, `Invoke-EvergreenLibraryUpdate`, and `Get-EvergreenLibrary` [#357](https://github.com/aaronparker/evergreen/discussions/357)
-* Updates `MicrosoftFSLogixApps` to revert the source URL to `https://aka.ms/fslogix/download`. Hey, Microsoft, any chance you could stop changing the source URL please!? [#359](https://github.com/aaronparker/evergreen/issues/359)
+* Adds functions to create an Evergreen library - a library is a directory that contains application installers and allows you to keep multiple versions. Functions are `New-EvergreenLibrary`, `Invoke-EvergreenLibraryUpdate`, and `Get-EvergreenLibrary` [#357](https://github.com/eucpilots/evergreen-module/discussions/357)
+* Updates `MicrosoftFSLogixApps` to revert the source URL to `https://aka.ms/fslogix/download`. Hey, Microsoft, any chance you could stop changing the source URL please!? [#359](https://github.com/eucpilots/evergreen-module/issues/359)
 * Updates output from `Get-EvergreenApp` where a an unsupported value for `-Name` is specified. `Get-EvergreenApp` will attempt to output supported similar applications
-* Fixes an issue in `AdoptiumTemurin8`, `AdoptiumTemurin11`, `AdoptiumTemurin16`, `AdoptiumTemurin17`, `AdoptiumTemurin18` to address instances where releases returned from the update feed don't include details for MSI installers [#360](https://github.com/aaronparker/evergreen/issues/360)
+* Fixes an issue in `AdoptiumTemurin8`, `AdoptiumTemurin11`, `AdoptiumTemurin16`, `AdoptiumTemurin17`, `AdoptiumTemurin18` to address instances where releases returned from the update feed don't include details for MSI installers [#360](https://github.com/eucpilots/evergreen-module/issues/360)
 
 ## 2207.596
 
@@ -635,29 +651,29 @@ BREAKING CHANGES
 
 ## 2207.592
 
-* Updates the approach to detecting new versions in `MicrosoftWvdRemoteDesktop`. Uses update details available in JSON format and addresses issue [#352](https://github.com/aaronparker/evergreen/discussions/352)
-* Fixes and issue in `VMwareTools` where the download URL returned doesn't match the latest version available [#336](https://github.com/aaronparker/evergreen/discussions/336)
+* Updates the approach to detecting new versions in `MicrosoftWvdRemoteDesktop`. Uses update details available in JSON format and addresses issue [#352](https://github.com/eucpilots/evergreen-module/discussions/352)
+* Fixes and issue in `VMwareTools` where the download URL returned doesn't match the latest version available [#336](https://github.com/eucpilots/evergreen-module/discussions/336)
 * Removes hard-coded `ErrorAction = Continue` in private function `Invoke-WebRequestWrapper` to enable setting `ErrorAction` preference when calling this function from an application function
 
 ## 2206.583
 
-* Fixes an issue with `MozillaThunderbird` when attempting to return downloads for the full language list [#350](https://github.com/aaronparker/evergreen/discussions/350)
+* Fixes an issue with `MozillaThunderbird` when attempting to return downloads for the full language list [#350](https://github.com/eucpilots/evergreen-module/discussions/350)
 
 ## 2206.581
 
-* Adds `AppVentiX` [#205](https://github.com/aaronparker/evergreen/discussions/205)
+* Adds `AppVentiX` [#205](https://github.com/eucpilots/evergreen-module/discussions/205)
 * Updates `MozillaThunderbird` to align with `MozillaFirefox` - this function will return `en-US` as the default language. Additional languages can be passed to `MozillaThunderbird` via `Get-EvergreenApp -AppParams`
-* Updates private function `Get-GitHubRepoRelease` to support authentication to the GitHub API with a personal access token. The function will look for the `GITHUB_TOKEN` or `GH_TOKEN` environment variables and use the value of that variable in the authentication request, if the variable exists [#195](https://github.com/aaronparker/evergreen/discussions/195)
+* Updates private function `Get-GitHubRepoRelease` to support authentication to the GitHub API with a personal access token. The function will look for the `GITHUB_TOKEN` or `GH_TOKEN` environment variables and use the value of that variable in the authentication request, if the variable exists [#195](https://github.com/eucpilots/evergreen-module/discussions/195)
 
 ## 2206.574
 
-* Adds `AutoDarkMode` [#335](https://github.com/aaronparker/evergreen/discussions/335), `CodelerityApacheNetBeans` [#339](https://github.com/aaronparker/evergreen/discussions/339), `JeremyMainGPUProfiler` [#337](https://github.com/aaronparker/evergreen/discussions/337),`EgnyteDesktopApp` [#340](https://github.com/aaronparker/evergreen/discussions/340)
-* Fixes `SumatraPDFReader` due to changes in download URLs [#338](https://github.com/aaronparker/evergreen/discussions/338)
+* Adds `AutoDarkMode` [#335](https://github.com/eucpilots/evergreen-module/discussions/335), `CodelerityApacheNetBeans` [#339](https://github.com/eucpilots/evergreen-module/discussions/339), `JeremyMainGPUProfiler` [#337](https://github.com/eucpilots/evergreen-module/discussions/337),`EgnyteDesktopApp` [#340](https://github.com/eucpilots/evergreen-module/discussions/340)
+* Fixes `SumatraPDFReader` due to changes in download URLs [#338](https://github.com/eucpilots/evergreen-module/discussions/338)
 
 ## 2205.567
 
-* Adds `DockerDesktop` [#332](https://github.com/aaronparker/evergreen/discussions/332)
-* Updates `1Password` to return 1Password 8.x update; `1Password7` will now continue to return updates for 1Password 7.x [#330](https://github.com/aaronparker/evergreen/discussions/330)
+* Adds `DockerDesktop` [#332](https://github.com/eucpilots/evergreen-module/discussions/332)
+* Updates `1Password` to return 1Password 8.x update; `1Password7` will now continue to return updates for 1Password 7.x [#330](https://github.com/eucpilots/evergreen-module/discussions/330)
 * Addresses an issue in `RCoreTeamRforWindows` to better handle when the source site is down
 * Updates the source used for `MicrosoftFSLogixApps` - this is a workaround because Microsoft has changed the aka.ms link to the FSLogix Apps agent download, again. I really wish they would stop doing that.
 
@@ -675,7 +691,7 @@ BREAKING CHANGES
 ## 2205.555
 
 * Adds `AdoptiumTemurin18`, `Tower`
-* Adds `VMwareWorkstationPlayer`, `VMwareWorkstationPro` [#275](https://github.com/aaronparker/evergreen/discussions/275)
+* Adds `VMwareWorkstationPlayer`, `VMwareWorkstationPro` [#275](https://github.com/eucpilots/evergreen-module/discussions/275)
 * Updates `Resolve-DnsNameWrapper` (and `GhislerTotalCommander`) to work under PowerShell Core using [DnsClient-PS](https://github.com/rmbolger/DnsClient-PS). Manual installation of DnsClient-PS on macOS or Linux is required
 
 ## 2205.549
@@ -686,7 +702,7 @@ BREAKING CHANGES
 
 ## 2205.546
 
-* Updates `RStudio` with new update sources for all curren branches and now returns Free and Pro editions [#318](https://github.com/aaronparker/evergreen/discussions/318)
+* Updates `RStudio` with new update sources for all curren branches and now returns Free and Pro editions [#318](https://github.com/eucpilots/evergreen-module/discussions/318)
 * Fixes an issue with installers returned by `MicrosoftEdgeDriver` and `MicrosoftEdgeWebView2Runtime`
 * Updates `McNeelRhino` to work under PowerShell 6/7 - resolves an issue when using `Invoke-RestMethod` which does not follow a HTTP 302 response
 
@@ -696,8 +712,8 @@ BREAKING CHANGES
 
 ## 2205.541
 
-* Fixes `MicrosoftSsms` to address returning the latest version and binaries [#305](https://github.com/aaronparker/evergreen/discussions/305)
-* Fixes an issue in `MicrosoftEdge`, `MicrosoftEdgeDriver`, `MicrosoftEdgeWebView2Runtime` where versions were sorted differently between PowerShell Core and Windows PowerShell to ensure the correct versions are returned [#311](https://github.com/aaronparker/evergreen/discussions/311)
+* Fixes `MicrosoftSsms` to address returning the latest version and binaries [#305](https://github.com/eucpilots/evergreen-module/discussions/305)
+* Fixes an issue in `MicrosoftEdge`, `MicrosoftEdgeDriver`, `MicrosoftEdgeWebView2Runtime` where versions were sorted differently between PowerShell Core and Windows PowerShell to ensure the correct versions are returned [#311](https://github.com/eucpilots/evergreen-module/discussions/311)
 * Fixes an issue in `VeraCrypt` where the version string returned was not correct
 
 ## 2205.537
@@ -709,13 +725,13 @@ BREAKING CHANGES
 
 * Adds `Test-EvergreenApp` that enables testing of installers returned by `Save-EvergreenApp` to determine whether the URI is valid
 * Adds `AdobeAcrobatDC` that uses an alternative method to `AdobeAcrobat` to determine the current version of Adobe Acrobat Standard/Pro DC and Adobe Acrobat Reader DC. `AdobeAcrobat` has been left as-is to avoid a breaking change and to continue to provide updates for earlier versions of Acrobat / Reader updates
-* Adds `Obsidian` [#310](https://github.com/aaronparker/evergreen/discussions/310), `ScreenToGif`
-* Updates `MicrosoftEdge`, `MicrosoftEdgeDriver`, `MicrosoftEdgeWebView2Runtime` to ensure that the correct versions are returned for the `Enterprise` view for Edge installers [#311](https://github.com/aaronparker/evergreen/discussions/311)
-* Updates various functions to use `Write-Error` instead of `throw` to ensure that functions continue where a specific query for an installer fails [#306](https://github.com/aaronparker/evergreen/issues/306)
+* Adds `Obsidian` [#310](https://github.com/eucpilots/evergreen-module/discussions/310), `ScreenToGif`
+* Updates `MicrosoftEdge`, `MicrosoftEdgeDriver`, `MicrosoftEdgeWebView2Runtime` to ensure that the correct versions are returned for the `Enterprise` view for Edge installers [#311](https://github.com/eucpilots/evergreen-module/discussions/311)
+* Updates various functions to use `Write-Error` instead of `throw` to ensure that functions continue where a specific query for an installer fails [#306](https://github.com/eucpilots/evergreen-module/issues/306)
 
 ### Breaking Changes
 
-* Updates the approach used in `AdobeAcrobatReaderDC` to determine the version and available downloads for Adobe Acrobat Reader DC. Adobe has changed the available enterprise installers at [https://get.adobe.com/uk/reader/enterprise/](https://get.adobe.com/uk/reader/enterprise/) [#312](https://github.com/aaronparker/evergreen/discussions/312)
+* Updates the approach used in `AdobeAcrobatReaderDC` to determine the version and available downloads for Adobe Acrobat Reader DC. Adobe has changed the available enterprise installers at [https://get.adobe.com/uk/reader/enterprise/](https://get.adobe.com/uk/reader/enterprise/) [#312](https://github.com/eucpilots/evergreen-module/discussions/312)
 
 ## 2202.525
 
@@ -724,44 +740,44 @@ BREAKING CHANGES
 
 ## 2202.521
 
-* Adds `HashicorpPacker`, `HashicorpBoundary`, `HashicorpVault`, `HashicorpWaypoint`, `HashicorpConsul`, `HashicorpTerraform`, `HashicorpNomad` [#241](https://github.com/aaronparker/evergreen/discussions/241)
+* Adds `HashicorpPacker`, `HashicorpBoundary`, `HashicorpVault`, `HashicorpWaypoint`, `HashicorpConsul`, `HashicorpTerraform`, `HashicorpNomad` [#241](https://github.com/eucpilots/evergreen-module/discussions/241)
 
 ## 2201.519
 
-* Adds `TogglDesktop` [#281](https://github.com/aaronparker/evergreen/discussions/281), `OperaBrowser` [#299](https://github.com/aaronparker/evergreen/discussions/299), `OperaGXBrowser` [#299](https://github.com/aaronparker/evergreen/discussions/299)
-* Adds Hindi language to `AdobeAcrobatReaderDC` to add the [MUI installer](https://helpx.adobe.com/reader/faq.html) to the list of returned installers [#297](https://github.com/aaronparker/evergreen/discussions/297)
-* Updates the approach used in `Microsoft365Apps` to find branch version details [#294](https://github.com/aaronparker/evergreen/discussions/294). The previous approach would occasionally list incorrect versions
+* Adds `TogglDesktop` [#281](https://github.com/eucpilots/evergreen-module/discussions/281), `OperaBrowser` [#299](https://github.com/eucpilots/evergreen-module/discussions/299), `OperaGXBrowser` [#299](https://github.com/eucpilots/evergreen-module/discussions/299)
+* Adds Hindi language to `AdobeAcrobatReaderDC` to add the [MUI installer](https://helpx.adobe.com/reader/faq.html) to the list of returned installers [#297](https://github.com/eucpilots/evergreen-module/discussions/297)
+* Updates the approach used in `Microsoft365Apps` to find branch version details [#294](https://github.com/eucpilots/evergreen-module/discussions/294). The previous approach would occasionally list incorrect versions
 
 ## 2112.512
 
 * Adds `MicrosoftWvdMultimediaRedirection` [https://docs.microsoft.com/en-us/azure/virtual-desktop/multimedia-redirection](https://docs.microsoft.com/en-us/azure/virtual-desktop/multimedia-redirection)
-* Updates the source URL for `MicrosoftWvdRtcService` [#288](https://github.com/aaronparker/evergreen/issues/288)
-* Updates installer types for `NotepadPlusPlus` [#287](https://github.com/aaronparker/evergreen/issues/287)
-* Fixes an issue with `MicrosoftPowerShell` due to changes in the update source [#282](https://github.com/aaronparker/evergreen/issues/282)
-* Addresses code issues identified with [PSScriptAnalyzer](https://github.com/aaronparker/evergreen/actions/workflows/powershell-analysis.yml)
+* Updates the source URL for `MicrosoftWvdRtcService` [#288](https://github.com/eucpilots/evergreen-module/issues/288)
+* Updates installer types for `NotepadPlusPlus` [#287](https://github.com/eucpilots/evergreen-module/issues/287)
+* Fixes an issue with `MicrosoftPowerShell` due to changes in the update source [#282](https://github.com/eucpilots/evergreen-module/issues/282)
+* Addresses code issues identified with [PSScriptAnalyzer](https://github.com/eucpilots/evergreen-module/actions/workflows/powershell-analysis.yml)
 
 ## 2112.504
 
-* Adds `ImageMagickStudioImageMagick` [#242](https://github.com/aaronparker/evergreen/issues/242), `Miniconda` [#246](https://github.com/aaronparker/evergreen/issues/246), `TorProjectTorBrowser` [#246](https://github.com/aaronparker/evergreen/issues/246), `diagrams.net` [#276](https://github.com/aaronparker/evergreen/issues/276)
-* Adds `AdoptiumTemurin8`, `AdoptiumTemurin11`, `AdoptiumTemurin16`, `AdoptiumTemurin17` and addresses [#273](https://github.com/aaronparker/evergreen/issues/273) [#199](https://github.com/aaronparker/evergreen/issues/199),
-* Updates `MicrosoftOneDrive` with new update sources and adds more update channels. Now includes: `Production`, `Enterprise`, `Insider`, `InternalSlow`, `InternalFast` [#269](https://github.com/aaronparker/evergreen/issues/269)
+* Adds `ImageMagickStudioImageMagick` [#242](https://github.com/eucpilots/evergreen-module/issues/242), `Miniconda` [#246](https://github.com/eucpilots/evergreen-module/issues/246), `TorProjectTorBrowser` [#246](https://github.com/eucpilots/evergreen-module/issues/246), `diagrams.net` [#276](https://github.com/eucpilots/evergreen-module/issues/276)
+* Adds `AdoptiumTemurin8`, `AdoptiumTemurin11`, `AdoptiumTemurin16`, `AdoptiumTemurin17` and addresses [#273](https://github.com/eucpilots/evergreen-module/issues/273) [#199](https://github.com/eucpilots/evergreen-module/issues/199),
+* Updates `MicrosoftOneDrive` with new update sources and adds more update channels. Now includes: `Production`, `Enterprise`, `Insider`, `InternalSlow`, `InternalFast` [#269](https://github.com/eucpilots/evergreen-module/issues/269)
 * Updates `MicrosoftTeams` with new approach for dynamically determining download URLs and adds `.exe` installers
-* Updates `Microsoft.NET` due to changes in source location for .NET 6. Dynamically finds installer source URLs and provides `windowsdesktop`, `runtime`, `sdk` installers. Includes .NET `6.0`, `5.0` and `3.1` [#278](https://github.com/aaronparker/evergreen/issues/278)
-* Updates `FoxitPDFEditor` to fix an issue with changes to language properties from the update source [#274](https://github.com/aaronparker/evergreen/issues/274)
+* Updates `Microsoft.NET` due to changes in source location for .NET 6. Dynamically finds installer source URLs and provides `windowsdesktop`, `runtime`, `sdk` installers. Includes .NET `6.0`, `5.0` and `3.1` [#278](https://github.com/eucpilots/evergreen-module/issues/278)
+* Updates `FoxitPDFEditor` to fix an issue with changes to language properties from the update source [#274](https://github.com/eucpilots/evergreen-module/issues/274)
 * Updates `GitHubRelease` with additional file types to return by default Thanks to [@JonathanPitre](https://github.com/JonathanPitre)
 
 ## 2111.488
 
-* Adds `-CustomPath` parameter to `Save-EvergreenApp` - allows for specifying a specific target directory for downloads instead of building the directory structure automatically from the input object [#260](https://github.com/aaronparker/evergreen/issues/260)
-* Adds `OctopusDeployServer` [#238](https://github.com/aaronparker/evergreen/issues/238), `OctopusTentacle` [#239](https://github.com/aaronparker/evergreen/issues/239), `7ZipZS` [#232](https://github.com/aaronparker/evergreen/issues/232), `PDF24Creator` [#258](https://github.com/aaronparker/evergreen/issues/258), `MicrosoftEdgeDriver` [#262](https://github.com/aaronparker/evergreen/issues/262), `MirantisLens` [#248](https://github.com/aaronparker/evergreen/issues/248), `GeekSoftwarePDF24Creator` [#256](https://github.com/aaronparker/evergreen/issues/256)
-* Adds `dbeaver`, `MattermostDesktop`, `PuTTY` [#255](https://github.com/aaronparker/evergreen/issues/255). Thanks to [@BornToBeRoot](https://github.com/BornToBeRoot)
-* Adds `VisualCppRedistAIO` [#250](https://github.com/aaronparker/evergreen/issues/250), `OpenWebStart` [#263](https://github.com/aaronparker/evergreen/issues/263). Thanks to [@JonathanPitre](https://github.com/JonathanPitre)
+* Adds `-CustomPath` parameter to `Save-EvergreenApp` - allows for specifying a specific target directory for downloads instead of building the directory structure automatically from the input object [#260](https://github.com/eucpilots/evergreen-module/issues/260)
+* Adds `OctopusDeployServer` [#238](https://github.com/eucpilots/evergreen-module/issues/238), `OctopusTentacle` [#239](https://github.com/eucpilots/evergreen-module/issues/239), `7ZipZS` [#232](https://github.com/eucpilots/evergreen-module/issues/232), `PDF24Creator` [#258](https://github.com/eucpilots/evergreen-module/issues/258), `MicrosoftEdgeDriver` [#262](https://github.com/eucpilots/evergreen-module/issues/262), `MirantisLens` [#248](https://github.com/eucpilots/evergreen-module/issues/248), `GeekSoftwarePDF24Creator` [#256](https://github.com/eucpilots/evergreen-module/issues/256)
+* Adds `dbeaver`, `MattermostDesktop`, `PuTTY` [#255](https://github.com/eucpilots/evergreen-module/issues/255). Thanks to [@BornToBeRoot](https://github.com/BornToBeRoot)
+* Adds `VisualCppRedistAIO` [#250](https://github.com/eucpilots/evergreen-module/issues/250), `OpenWebStart` [#263](https://github.com/eucpilots/evergreen-module/issues/263). Thanks to [@JonathanPitre](https://github.com/JonathanPitre)
 * Updates `MozillaFirefox` to output MSIX file type and ARM64 architecture
-* Updates `AmazonCorretto` to include version 17 [#249](https://github.com/aaronparker/evergreen/issues/249)
-* Updates `GoogleChrome` to include channels `Dev` and `Beta` [#243](https://github.com/aaronparker/evergreen/issues/243)
-* Updates source URI for `MicrosoftFSLogixApps` due to changes in source [#259](https://github.com/aaronparker/evergreen/issues/259)
-* Fixes URI values for `SumatraPDFViewer` due to changes in source [#211](https://github.com/aaronparker/evergreen/issues/211)
-* Fixes URI values for `FoxitReader` due to changes in source [#261](https://github.com/aaronparker/evergreen/issues/261)
+* Updates `AmazonCorretto` to include version 17 [#249](https://github.com/eucpilots/evergreen-module/issues/249)
+* Updates `GoogleChrome` to include channels `Dev` and `Beta` [#243](https://github.com/eucpilots/evergreen-module/issues/243)
+* Updates source URI for `MicrosoftFSLogixApps` due to changes in source [#259](https://github.com/eucpilots/evergreen-module/issues/259)
+* Fixes URI values for `SumatraPDFViewer` due to changes in source [#211](https://github.com/eucpilots/evergreen-module/issues/211)
+* Fixes URI values for `FoxitReader` due to changes in source [#261](https://github.com/eucpilots/evergreen-module/issues/261)
 
 ### Breaking Changes
 
@@ -770,15 +786,15 @@ BREAKING CHANGES
 
 ## 2110.467
 
-* Fixes an issue with `AdobeAcrobat` where the string returned from the Adobe update API added a new line after the version number [#233](https://github.com/aaronparker/evergreen/issues/233)
-* Adds `GhislerTotalCommander` [#229](https://github.com/aaronparker/evergreen/issues/229), `PaintDotNetOfflineInstaller` [#235](https://github.com/aaronparker/evergreen/issues/235), `TelerikFiddlerClassic`, `voidtoolsEverything` [#230](https://github.com/aaronparker/evergreen/issues/230)
+* Fixes an issue with `AdobeAcrobat` where the string returned from the Adobe update API added a new line after the version number [#233](https://github.com/eucpilots/evergreen-module/issues/233)
+* Adds `GhislerTotalCommander` [#229](https://github.com/eucpilots/evergreen-module/issues/229), `PaintDotNetOfflineInstaller` [#235](https://github.com/eucpilots/evergreen-module/issues/235), `TelerikFiddlerClassic`, `voidtoolsEverything` [#230](https://github.com/eucpilots/evergreen-module/issues/230)
 * Adds `USBPcap`. Thanks to [Dan Gough](https://github.com/DanGough)
 * Updates method used to determine version and download for `JSAP`
 * Adds private function `Resolve-DnsNameWrapper` to resolve DNS TXT records. Used by `GhislerTotalCommander`. Currently supports Windows only
 
 ### Breaking Changes
 
-* Disables `LibreOffice` - the update method keeps changing requiring a significant amount of work to fix each time. [#218](https://github.com/aaronparker/evergreen/issues/218)
+* Disables `LibreOffice` - the update method keeps changing requiring a significant amount of work to fix each time. [#218](https://github.com/eucpilots/evergreen-module/issues/218)
 * Updates `Microsoft365Apps` to fix some instances where the incorrect version number returned, and updates channel names in `Channel` property using the names listed in the `Channel` property in the configuration.xml. A `Name` property has been added with the full channel names to ensure readability. This reflects the same channel names used when creating a configuration in the [Microsoft 365 Apps admin center](https://config.office.com/)
   * Channel properties are listed in the following articles: [Configuration options for the Office Deployment Tool](https://docs.microsoft.com/en-us/deployoffice/office-deployment-tool-configuration-options#channel-attribute-part-of-add-element), [Update channel for Office LTSC 2021](https://docs.microsoft.com/en-us/deployoffice/ltsc2021/update#update-channel-for-office-ltsc-2021), [Update channel for Office 2019](https://docs.microsoft.com/en-us/deployoffice/office2019/update#update-channel-for-office-2019)
   * Full channel names are listed here: [Update history for Microsoft 365 Apps](https://docs.microsoft.com/en-us/officeupdates/update-history-microsoft365-apps-by-date)
@@ -798,7 +814,7 @@ BREAKING CHANGES
 
 * Adds `deviceTRUST`
 * Fixes an issue in `Save-EvergreenApp` when the path specified in the `-Path` parameter does not exist
-* Updates `LibreOffice` to gracefully handle download a scenario where the The Document Foundation pulls the download links for a published version [#218](https://github.com/aaronparker/evergreen/issues/218)
+* Updates `LibreOffice` to gracefully handle download a scenario where the The Document Foundation pulls the download links for a published version [#218](https://github.com/eucpilots/evergreen-module/issues/218)
 
 ### Breaking Changes
 
@@ -819,13 +835,13 @@ BREAKING CHANGES
 ## 2107.431
 
 * Adds `SignalDesktop`
-* Updates `MicrosoftAzureCoreFunctionTools` to return MSI installers [#213](https://github.com/aaronparker/evergreen/issues/213)
+* Updates `MicrosoftAzureCoreFunctionTools` to return MSI installers [#213](https://github.com/eucpilots/evergreen-module/issues/213)
 * Updates `CitrixWorkspaceApp` to return a `Stream` property that includes a value of `Current` or `LTSR`
-* Updates `LibreOffice` [#171](https://github.com/aaronparker/evergreen/issues/171), `CitrixWorkspaceApp`, `OracleJava8`, `MicrosoftSsms` to use `Invoke-RestMethodWrapper` to avoid needing to convert update feed into XML simplifying the code
+* Updates `LibreOffice` [#171](https://github.com/eucpilots/evergreen-module/issues/171), `CitrixWorkspaceApp`, `OracleJava8`, `MicrosoftSsms` to use `Invoke-RestMethodWrapper` to avoid needing to convert update feed into XML simplifying the code
 
 ### Breaking Changes
 
-* Renames `AtlassianBitbucket` to `AtlassianSourcetree` [#177](https://github.com/aaronparker/evergreen/issues/177)
+* Renames `AtlassianBitbucket` to `AtlassianSourcetree` [#177](https://github.com/eucpilots/evergreen-module/issues/177)
 
 ## 2107.425
 
@@ -859,9 +875,9 @@ BREAKING CHANGES
 
 ## 2106.395
 
-* Adds `AkeoRufus` [#179](https://github.com/aaronparker/evergreen/issues/179), `BlenderLauncher` [#178](https://github.com/aaronparker/evergreen/issues/178)
-* Updates `MicrosoftFSLogixApps` to return both the production and preview releases [#176](https://github.com/aaronparker/evergreen/issues/176)
-* Updates `Veracrypt` to return the complete version number (e.g. `1.24-Update7`) [#166](https://github.com/aaronparker/evergreen/issues/166)
+* Adds `AkeoRufus` [#179](https://github.com/eucpilots/evergreen-module/issues/179), `BlenderLauncher` [#178](https://github.com/eucpilots/evergreen-module/issues/178)
+* Updates `MicrosoftFSLogixApps` to return both the production and preview releases [#176](https://github.com/eucpilots/evergreen-module/issues/176)
+* Updates `Veracrypt` to return the complete version number (e.g. `1.24-Update7`) [#166](https://github.com/eucpilots/evergreen-module/issues/166)
 
 ### Breaking Changes
 
@@ -869,22 +885,22 @@ BREAKING CHANGES
 
 ## 2105.388
 
-* Update `VMwareHorizonClient` with additional filtering to select the latest version correctly to address [#161](https://github.com/aaronparker/evergreen/issues/161)
+* Update `VMwareHorizonClient` with additional filtering to select the latest version correctly to address [#161](https://github.com/eucpilots/evergreen-module/issues/161)
 * Add internal function `Save-File` to download a URL with `Invoke-WebRequest` and return the downloaded file path
-* Update internal application functions for consistent use of `Resolve-SystemNetWebRequest` to address [#174](https://github.com/aaronparker/evergreen/issues/174) - `Get-FoxitReader`, `Get-LogMeInGoToOpener`, `Get-MicrosoftSsms`, `Get-MicrosoftVisualStudio`, `Get-RingCentral`, `Get-Slack`
+* Update internal application functions for consistent use of `Resolve-SystemNetWebRequest` to address [#174](https://github.com/eucpilots/evergreen-module/issues/174) - `Get-FoxitReader`, `Get-LogMeInGoToOpener`, `Get-MicrosoftSsms`, `Get-MicrosoftVisualStudio`, `Get-RingCentral`, `Get-Slack`
 * Update references to documentation site `https://stealthpuppy.com/Evergreen` to `https://stealthpuppy.com/evergreen`
 
 ## 2105.383
 
-* Adds `CiscoWebEx` ([#141](https://github.com/aaronparker/Evergreen/issues/141)), `VeraCrypt` ([#160](https://github.com/aaronparker/Evergreen/issues/160)), `KarakunOpenWebStart` ([#163](https://github.com/aaronparker/Evergreen/issues/163))
+* Adds `CiscoWebEx` ([#141](https://github.com/eucpilots/evergreen-module/issues/141)), `VeraCrypt` ([#160](https://github.com/eucpilots/evergreen-module/issues/160)), `KarakunOpenWebStart` ([#163](https://github.com/eucpilots/evergreen-module/issues/163))
 * Updates `MicrosoftWvdRemoteDesktop` with the Preview release and fixes source URLs for the public release
-* Adds `ARM64` architecture to `MicrosoftTeams` [#162](https://github.com/aaronparker/Evergreen/issues/162)
+* Adds `ARM64` architecture to `MicrosoftTeams` [#162](https://github.com/eucpilots/evergreen-module/issues/162)
 * Adds `MSI` file type to `Wireshark`
 * Updates internal function `Get-SourceForgeRepoRelease` with improvements to find releases and download URIs
 
 ## 2105.371
 
-* Adds `Audacity`, `Wireshark` ([#153](https://github.com/aaronparker/Evergreen/issues/153)), `LogMeInGoToMeeting` ([#152](https://github.com/aaronparker/Evergreen/issues/152)), `LogMeInGoToOpener`
+* Adds `Audacity`, `Wireshark` ([#153](https://github.com/eucpilots/evergreen-module/issues/153)), `LogMeInGoToMeeting` ([#152](https://github.com/eucpilots/evergreen-module/issues/152)), `LogMeInGoToOpener`
 * Updates `AdobeAcrobat` to include Reader updates for `2015`, `2017`, `2020`
 * Updates `AdobeAcrobat` to include 64-bit updates for Reader and Acrobat DC
 
@@ -894,15 +910,15 @@ BREAKING CHANGES
 
 ## 2105.366
 
-* Fixes an issue with `Remove-Variable` in `Save-EvergreenApp` [Fix #149](https://github.com/aaronparker/Evergreen/issues/149)
+* Fixes an issue with `Remove-Variable` in `Save-EvergreenApp` [Fix #149](https://github.com/eucpilots/evergreen-module/issues/149)
 * Updates `Save-EvergreenApp` to skip downloading a file if it already exists and adds support for `-Force`
 * Updates help for `Save-EvergreenApp`
-* Adds `nb-NO` language support to `MozillaFirefox` [Fix #146](https://github.com/aaronparker/Evergreen/issues/146)
+* Adds `nb-NO` language support to `MozillaFirefox` [Fix #146](https://github.com/eucpilots/evergreen-module/issues/146)
 
 ## 2105.363
 
 * Adds `ImageGlass`, `MicrosoftAzureStorageExplorer`, `Nomacs`, `Notable`, `OBSStudio`
-* Updates URL used by `TeamViewer` to return the current version [#147](https://github.com/aaronparker/Evergreen/issues/147)
+* Updates URL used by `TeamViewer` to return the current version [#147](https://github.com/eucpilots/evergreen-module/issues/147)
 * Updates `Save-EvergreenApp` to output the result of `Get-ChildItem` as the output to the pipeline
 * Updates module to use external help MAML-based help with [platyPS](https://github.com/PowerShell/platyPS) to make updating help content easier
 * General code improvements
@@ -937,7 +953,7 @@ BREAKING CHANGES
 
 ## 2103.305
 
-* Fixes an issue with `Get-AdobeAcrobat` to ensure that `Track` property has the correct value (DC, 2020, etc.) and the `Language` property (Neutral, Multi) [#130](https://github.com/aaronparker/Evergreen/issues/130)
+* Fixes an issue with `Get-AdobeAcrobat` to ensure that `Track` property has the correct value (DC, 2020, etc.) and the `Language` property (Neutral, Multi) [#130](https://github.com/eucpilots/evergreen-module/issues/130)
 
 ## 2103.303
 
@@ -950,7 +966,7 @@ BREAKING CHANGES
 
 * Adds `Get-MicrosoftAzureDataStudio`, `Get-ControlUpConsole`
 * Updates `Get-ControlUpAgent` to use the published JSON at [https://www.controlup.com/latest-agent-console/](https://www.controlup.com/latest-agent-console/) - the last vestiges of any screen scraping code have been swept away
-* Updates `Get-AdobeAcrobatReaderDC` to account for the new 64-bit version of Reader to add [#121](https://github.com/aaronparker/Evergreen/issues/121). Filter with `Where-Object` to return the required version, language and architecture
+* Updates `Get-AdobeAcrobatReaderDC` to account for the new 64-bit version of Reader to add [#121](https://github.com/eucpilots/evergreen-module/issues/121). Filter with `Where-Object` to return the required version, language and architecture
 
 ### Breaking Changes
 
@@ -960,7 +976,7 @@ BREAKING CHANGES
 
 ## 2102.291
 
-* Renames function `Get-AdobeAcrobatProDC` to `Get-AdobeAcrobat` and includes support for returning updates for Adobe Acrobat Pro/Standard DC, 2020, 2017, and 2015. Addresses [#114](https://github.com/aaronparker/Evergreen/issues/114)
+* Renames function `Get-AdobeAcrobatProDC` to `Get-AdobeAcrobat` and includes support for returning updates for Adobe Acrobat Pro/Standard DC, 2020, 2017, and 2015. Addresses [#114](https://github.com/eucpilots/evergreen-module/issues/114)
   * Alias `Get-AdobeAcrobatProDC` included for backward compatibility
 * Adds `Preview` ring to `Get-MicrosoftTeams`
 * Updates function comment-based help and corrects spelling across several functions
@@ -974,14 +990,14 @@ BREAKING CHANGES
 
 * Adds the `ARM` architecture to `Get-MicrosoftVisualStudioCode`
 * Updates `Get-MicrosoftWvdRemoteDesktop` to output the `URI` property value in the format `https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MntQ` instead of the original `fwlink` source URL (e.g. `https://go.microsoft.com/fwlink/?linkid=2068602`)
-* Updates the following functions to use `Invoke-RestMethod` (via `Invoke-RestMethodWrapper`) instead of `Invoke-WebRequest` to simplify code and fix an issue where some functions where returning `Version` as a PSObject instead of System.String ([#109](https://github.com/aaronparker/Evergreen/issues/109))
+* Updates the following functions to use `Invoke-RestMethod` (via `Invoke-RestMethodWrapper`) instead of `Invoke-WebRequest` to simplify code and fix an issue where some functions where returning `Version` as a PSObject instead of System.String ([#109](https://github.com/eucpilots/evergreen-module/issues/109))
   * `Get-AtlassianBitbucket`, `Get-Cyberduck`, `Get-FileZilla`, `Get-Fork`, `Get-RingCentral`, `Get-ScooterBeyondCompare`, `Get-SumatraPDFReader`, `Get-VideoLanVlcPlayer`
 * Updates module `ReleaseNotes` location to: [https://stealthpuppy.com/evergreen/changelog.html](https://stealthpuppy.com/evergreen/changelog.html)
 
 ## 2101.281
 
 * Renames `Get-MicrosoftOffice`, to `Get-Microsoft365Apps` to align with product name. The alias `Get-MicrosoftOffice` is included for backward compatibility
-* Adds the `Monthly Enterprise` channel to `Get-Microsoft365Apps` output. See [#107](https://github.com/aaronparker/Evergreen/issues/107)
+* Adds the `Monthly Enterprise` channel to `Get-Microsoft365Apps` output. See [#107](https://github.com/eucpilots/evergreen-module/issues/107)
 * Adds private function `Invoke-RestMethodWrapper` to enable normalisation across public functions and PowerShell/Windows PowerShell that use `Invoke-RestMethod`
   * Updates private function `Get-GitHubRepoRelease` to use `Invoke-RestMethodWrapper`
   * Updates several public functions to use `Invoke-RestMethodWrapper` instead of the previous method of `Invoke-WebRequest | ConvertTo-Json` - `Get-1Password`, `Get-CitrixVMTools`, `Get-FoxitReader`, `Get-GoogleChrome`, `Get-Microsoft365Apps`, `Get-MicrosoftEdge`, `Get-MicrosoftTeams`, `Get-MicrosoftVisualStudioCode`, `Get-MozillaFirefox`, `Get-MozillaThunderbird`
@@ -1020,7 +1036,7 @@ BREAKING CHANGES
 
 * Adds `Get-Terminals`, `Get-PeaZipPeaZip`, `Get-Slack`, `Get-MicrosoftWindowsPackageManagerClient`, `Get-KeePassXCTeamKeePassXC`, `Get-SumatraPDFReader`
 * Renames `Get-Atom`, to `Get-GitHubAtom` to better align with vendor name. The alias `Get-Atom` is included for backward compatibility
-* Fixes an issue with `Get-AdobeAcrobatReaderDC` - Adobe doesn't use HTTPS with their download locations yet. See [#99](https://github.com/aaronparker/Evergreen/issues/99)
+* Fixes an issue with `Get-AdobeAcrobatReaderDC` - Adobe doesn't use HTTPS with their download locations yet. See [#99](https://github.com/eucpilots/evergreen-module/issues/99)
 * Updates `Get-AdobeAcrobatReaderDC` to simplify code and better align manifest with standard structure
 
 ## 2101.249
@@ -1045,7 +1061,7 @@ BREAKING CHANGES
 * Adds `Get-AdobeAcrobatProDC`, `Get-TelerikFiddlerEverywhere`, `Get-1Password`
 * Adds Windows Installer downloads output to `Get-FoxitReader`
 * Updates `Get-MicrosoftSsms` to query an evergreen update URL to gather new versions from the product releases feed
-  * NOTE: the version of SSMS in the releases feed is not the actual current release version - we can only work with what the feed returns; See [#82](https://github.com/aaronparker/Evergreen/issues/82)
+  * NOTE: the version of SSMS in the releases feed is not the actual current release version - we can only work with what the feed returns; See [#82](https://github.com/eucpilots/evergreen-module/issues/82)
 * Updates `Get-MicrosoftSsms` to output all supported languages for downloads - filter output on the `Language` property
 * Updates `Get-MozillaFirefox` to return both Exe and Msi versions of the Firefox installer
 * Adds SHA256 hash property to output from `Get-MicrosoftVisualStudioCode`
@@ -1057,7 +1073,7 @@ BREAKING CHANGES
 
 ### Breaking Changes
 
-* Updates `Get-OpenJDK` to return only Msi releases and removes Debug, zip etc. On-going improvements - see [#76](https://github.com/aaronparker/Evergreen/issues/76)
+* Updates `Get-OpenJDK` to return only Msi releases and removes Debug, zip etc. On-going improvements - see [#76](https://github.com/eucpilots/evergreen-module/issues/76)
 * Removes Beta and Snapshots releases from `Get-Cyberduck`
 * Removes Debug releases from `Get-Greenshot`
 * Removes SafeMode releases from `Get-Handbrake`
@@ -1068,20 +1084,20 @@ BREAKING CHANGES
 ## 2012.225
 
 * Adds `Get-Microsoft.NET` (.NET 5.0 and .NET Core), `Get-Win32OpenSSH`, `Get-MicrosoftPowerToys`
-* Updates `Get-OpenJDK` to return all releases. Further filtering will be added in the future per [#76](https://github.com/aaronparker/Evergreen/issues/76)
-* Updates `Get-MozillaFirefox` to resolve download URIs for both EXE and MSI Firefox installers and updates output with additional properties (`Architecture`, `Channel` and `Type`). See [#83](https://github.com/aaronparker/Evergreen/issues/83).
+* Updates `Get-OpenJDK` to return all releases. Further filtering will be added in the future per [#76](https://github.com/eucpilots/evergreen-module/issues/76)
+* Updates `Get-MozillaFirefox` to resolve download URIs for both EXE and MSI Firefox installers and updates output with additional properties (`Architecture`, `Channel` and `Type`). See [#83](https://github.com/eucpilots/evergreen-module/issues/83).
   * Note: this introduces a breaking change - the `-Platform` switch has been removed, you will need to filter the output on the `Architecture` property
-* Updates `Get-AdobeAcrobatReader` to return additional languages [#84](https://github.com/aaronparker/Evergreen/issues/84). Note that Reader DC does not provide the latest version for all languages - it may be a better approach to use the [MUI version of the Reader installer](https://helpx.adobe.com/au/reader/faq.html#Enterprisedeployment) if your language is supported
+* Updates `Get-AdobeAcrobatReader` to return additional languages [#84](https://github.com/eucpilots/evergreen-module/issues/84). Note that Reader DC does not provide the latest version for all languages - it may be a better approach to use the [MUI version of the Reader installer](https://helpx.adobe.com/au/reader/faq.html#Enterprisedeployment) if your language is supported
 
 ## 2010.219
 
-* Update `Get-FileZilla` to fix invalid download URI returned from the FileZilla update feed. Fix [#75](https://github.com/aaronparker/Evergreen/issues/75)
-* Update `Get-Cyberduck` to remove code that replaces `//` with `/`. Returns unfiltered URL from Cyberduck update feed. Fix [#75](https://github.com/aaronparker/Evergreen/issues/75)
+* Update `Get-FileZilla` to fix invalid download URI returned from the FileZilla update feed. Fix [#75](https://github.com/eucpilots/evergreen-module/issues/75)
+* Update `Get-Cyberduck` to remove code that replaces `//` with `/`. Returns unfiltered URL from Cyberduck update feed. Fix [#75](https://github.com/eucpilots/evergreen-module/issues/75)
 
 ## 2009.218
 
-* Fix `Get-FoxitReader` with changes to download page in `FoxitReader.json`. Address [#72](https://github.com/aaronparker/Evergreen/issues/72)
-* Fix `Get-Zoom` with changes to resolved URIs. Address [#73](https://github.com/aaronparker/Evergreen/issues/73)
+* Fix `Get-FoxitReader` with changes to download page in `FoxitReader.json`. Address [#72](https://github.com/eucpilots/evergreen-module/issues/72)
+* Fix `Get-Zoom` with changes to resolved URIs. Address [#73](https://github.com/eucpilots/evergreen-module/issues/73)
 * Update `MicrosoftWvdRtcService.json` to new version of the Microsoft Remote Desktop WebRTC Redirector Service
 * Update `Resolve-Uri` with additional verbose output
 
@@ -1090,13 +1106,13 @@ BREAKING CHANGES
 * Renames `Get-CitrixXenServerTools` to `Get-CitrixVMTools` and adds `Get-CitrixXenServerTools` alias
 * Updates `Get-CitrixVMTools` with new release URL for v7 updates and add v9 updates
 * Updates install command lines for `Get-CitrixVMTools`
-* Adds `Get-AdoptOpenJDK` - closes [#69](https://github.com/aaronparker/Evergreen/issues/69)
+* Adds `Get-AdoptOpenJDK` - closes [#69](https://github.com/eucpilots/evergreen-module/issues/69)
 
 ## 2006.207
 
-* Fix path in downloads from apps hosted on Source Forge returned in `ConvertFrom-SourceForgeReleasesJson.ps1`. Fixes [#67](https://github.com/aaronparker/Evergreen/issues/67)
-* Update `Get-MozillaFirefox` to return Extended Support Release as well as Current Release. Address [#61](https://github.com/aaronparker/Evergreen/issues/61)
-* Update manifests to address [#57](https://github.com/aaronparker/Evergreen/issues/57) [#54](https://github.com/aaronparker/Evergreen/issues/54) [#53](https://github.com/aaronparker/Evergreen/issues/53) [#52](https://github.com/aaronparker/Evergreen/issues/52)
+* Fix path in downloads from apps hosted on Source Forge returned in `ConvertFrom-SourceForgeReleasesJson.ps1`. Fixes [#67](https://github.com/eucpilots/evergreen-module/issues/67)
+* Update `Get-MozillaFirefox` to return Extended Support Release as well as Current Release. Address [#61](https://github.com/eucpilots/evergreen-module/issues/61)
+* Update manifests to address [#57](https://github.com/eucpilots/evergreen-module/issues/57) [#54](https://github.com/eucpilots/evergreen-module/issues/54) [#53](https://github.com/eucpilots/evergreen-module/issues/53) [#52](https://github.com/eucpilots/evergreen-module/issues/52)
 
 ## 2006.203
 
@@ -1252,7 +1268,7 @@ BREAKING CHANGES
 ## 1911.87
 
 * Adds `Get-JamTreeSizeFree` and `Get-JamTreeSizeProfessional`
-* Fixes URL to [Release notes / CHANGELOG](https://github.com/aaronparker/Evergreen/blob/main/CHANGELOG.md) in module manifest
+* Fixes URL to [Release notes / CHANGELOG](https://github.com/eucpilots/evergreen-module/blob/main/CHANGELOG.md) in module manifest
 
 ## 1911.84
 
