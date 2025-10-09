@@ -3,7 +3,7 @@ layout: doc
 ---
 # How Evergreen works
 
-::: info Note
+::: tip Note
 Application version and download information is only pulled from official vendor sources (vendor web site, vendor maintained application update API, vendor's official repositories on GitHub or SourceForge etc.) and never a third party.
 :::
 

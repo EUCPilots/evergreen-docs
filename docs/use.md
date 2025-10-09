@@ -31,6 +31,10 @@ Each Evergreen application returns at least two properties in the object is send
 * `Version` - a string property that is the version number of the application. If you need these in a version format, cast them with `[System.Version]`
 * `URI` - a string property that is the download location for the latest version of the application. These will be publicly available locations that provide installers in typically Windows installer formats, e.g., `exe`, `msi`. Some downloads may be in other formats, such as `zip` that will need to be extracted before install
 
+::: tip Understanding output
+Because there is no standard output format from each vendor, and even for some applications from the same vendor, Evergreen is unable to return the same data for all apps, so the data returned may vary.
+:::
+
 Several applications may include additional properties in their output, which will often require filtering, including:
 
 * `Architecture` - the processor architecture of the installer

@@ -5,9 +5,9 @@ layout: doc
 
 Evergreen is a PowerShell module that returns the latest version and download links for a set of common Windows applications.
 
-## Trust
-
+::: tip Trust
 The goal of this project is to provide trust. Evergreen executes in your environment and queries application vendor sources only. To find application versions, Evergreen queries the same update APIs used by the application to find new updates or a source owned by the vendor. This means that you can trust what Evergreen returns because there is no middle man.
+:::
 
 ## Why
 
