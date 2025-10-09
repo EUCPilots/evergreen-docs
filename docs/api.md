@@ -17,11 +17,43 @@ Full documentation for the API is available here: [evergreen-api](https://app.sw
 
 Data that is returned by the Evergreen API can be viewed at the [Evergreen App Tracker](https://stealthpuppy.com/apptracker/).
 
-## Usage
+## Get-EvergreenAppFromApi
 
-In its current version, the API has only two endpoints that return data in JSON format - `/apps`, `/app/{appName}`. In PowerShell, the API can be queried with `Invoke-RestMethod`.
+Evergreen includes the `Get-EvergreenAppFromApi` function that is used in much the same way as `Get-EvergreenApp`. This function is simpler than using `Invoke-RestMethod`, and it automatically filters for available applications. For example, to query the API for application data for Microsoft Edge, use:
 
-::: info **A custom user agent is required**.
+```powershell
+PS C:\> Get-EvergreenAppFromApi -Name "MicrosoftEdge"
+
+Version      : 89.0.774.76
+Platform     : Windows
+Channel      : Stable
+Release      : Enterprise
+Architecture : x64
+Date         : 12/4/2021
+Hash         : 9E7A29B4BE6E1CD707F80B4B79008F19D2D5DD5C774D317A493EC6DE5BE0B7D7
+URI          : https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/4d12f620-174c-4259-85e6-8a80ea45ff10/MicrosoftEdgeEnterpriseX64.msi
+```
+
+This returns the current version and download URLs for Microsoft Edge using the official Microsoft Edge update API at [https://edgeupdates.microsoft.com/api/products](https://edgeupdates.microsoft.com/api/products).
+
+Just as with `Get-EvergreenApp`, the output can be filtered for the specific application installer with `Where-Object`. The example below returns the current version and download URL for the Stable channel of the 64-bit Enterprise ring of Microsoft Edge.
+
+```powershell
+Get-EvergreenAppFromApi -Name "MicrosoftEdge" | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Stable" -and $_.Release -eq "Enterprise" }
+```
+
+## API Usage
+
+In its current version, the API has only four endpoints that support GET calls and return data in JSON format:
+
+* `/apps` - returns the list of supported applications
+* `/app/{appName}` - returns details for a specified application
+* `endpoints/versions` - returns the list of URL endpoints used by Evergreen when it connects to vendor sources to return application details (i.e. with `Get-EvergreenApp`)
+* `/endpoints/downloads` - returns the list of URL endpoints used by Evergreen binaries are downloaded (i.e. with `Save-EvergreenApp`)
+
+In PowerShell, the API can be queried with `Invoke-RestMethod`.
+
+::: warning **A custom user agent is required**.
 The default user agents of most tools will be blocked to minimise the abuse of the API. Please provide a custom user agent when using tools such as PowerShell, wget, or curl etc. Please specify a custom user agent that will assist in troubleshooting and understand who is using the API (logging data is not made public). For example, specify a custom user agent in the form of "company name/location", or similar.
 :::
 
@@ -53,29 +85,4 @@ Invoke-RestMethod:
   "message": "Application not found. Call /apps for a list of available applications.",
   "documentation": "https://eucpilots.com/evergreen-docs/api/"
 }
-```
-
-## Get-EvergreenAppFromApi
-
-Evergreen includes the `Get-EvergreenAppFromApi` function that is used in much the same way as `Get-EvergreenApp`. This function is simpler than using `Invoke-RestMethod`, and it automatically filters for available applications. For example, to query the API for application data for Microsoft Edge, use:
-
-```powershell
-PS C:\> Get-EvergreenAppFromApi -Name "MicrosoftEdge"
-
-Version      : 89.0.774.76
-Platform     : Windows
-Channel      : Stable
-Release      : Enterprise
-Architecture : x64
-Date         : 12/4/2021
-Hash         : 9E7A29B4BE6E1CD707F80B4B79008F19D2D5DD5C774D317A493EC6DE5BE0B7D7
-URI          : https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/4d12f620-174c-4259-85e6-8a80ea45ff10/MicrosoftEdgeEnterpriseX64.msi
-```
-
-This returns the current version and download URLs for Microsoft Edge using the official Microsoft Edge update API at [https://edgeupdates.microsoft.com/api/products](https://edgeupdates.microsoft.com/api/products).
-
-Just as with `Get-EvergreenApp`, the output can be filtered for the specific application installer with `Where-Object`. The example below returns the current version and download URL for the Stable channel of the 64-bit Enterprise ring of Microsoft Edge.
-
-```powershell
-Get-EvergreenAppFromApi -Name "MicrosoftEdge" | Where-Object { $_.Architecture -eq "x64" -and $_.Channel -eq "Stable" -and $_.Release -eq "Enterprise" }
 ```
