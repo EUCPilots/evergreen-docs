@@ -7,7 +7,7 @@ The Evergreen API can return the endpoint URLs used by Evergreen to retrieve app
 
 The list of endpoints can be imported into firewall or proxy server systems where an allowed list of endpoints is required before using Evergreen to download application installers. All endpoints are accessed on TCP 80 or 443.
 
-## Using Get-EvergreenEndpointFromApi
+## Get-EvergreenEndpointFromApi
 
 `Get-EvergreenEndpointFromApi` can be used to simplify usage of the API, by returning all endpoints used by Evergreen in a single object. Running `Get-EvergreenEndpointFromApi` with no parameters, will return a complete list of endpoints and ports used for all applications.
 
@@ -65,6 +65,10 @@ Get-EvergreenEndpointFromApi | ForEach-Object {
 ## API Usage
 
 The API provides two lists of endpoints - URLs used by Evergreen to determine application versions and downloads, and URLs used to download application installers.
+
+::: warning **A custom user agent is required**.
+The default user agents of most tools will be blocked to minimise the abuse of the API. Please provide a custom user agent when using tools such as PowerShell, wget, or curl etc. Please specify a custom user agent that will assist in troubleshooting and understand who is using the API (logging data is not made public). For example, specify a custom user agent in the form of "company name/location", or similar.
+:::
 
 ### Return a list of URLs used to determine application versions
 
