@@ -3,6 +3,30 @@ layout: doc
 ---
 # Change log
 
+## 2510.2820.0
+
+* A working solution for adding output filters for Get-EvergreenApp. This should simplify returning details for a specific application by not requiring the use of `Where-Object`. The filters can be added to `/Evergreen/Filters`, along side the cached Apps and Manifests. [#871](https://github.com/EUCPilots/evergreen-module/discussions/871)
+* Removes `Sort-Object` from `Get-EvergreenApp` and `Get-EvergreenAppFromApi` to enable returning data to the pipeline as soon as it is available. This change will require the administrator to use `Sort-Object` manually. This removes `Sort-Object -Property @{ Expression = { [System.Version]$_.Version }; Descending = $true }, "Ring", "Channel", "Track" -ErrorAction "SilentlyContinue"` which can instead be used directly with `Get-EvergreenApp` to sort the output.
+
+## 2510.2817.0
+
+* Adds private function `ConvertFrom-Jwt` to convert JSON Web Tokens to something usable
+* `Write-Message` - Changed the Message parameter in Write-Message.ps1 from mandatory to optional to allow calling the function without specifying a message.
+* `Get-EvergreenEndpointFromApi` - Added [ValidateNotNullOrEmpty()] to the Name parameter to ensure it is not null or empty. Improved output filtering by throwing an error if no endpoints are found for the specified application(s), and standardized output using Write-Output.
+
+## 2510.2814.0
+
+* Account for changing the `EVERGREEN_APPS_PATH` variable at runtime
+* Reorganized the Update-Evergreen.ps1 function to remove the begin/process blocks and streamline logic flow
+* Improved variable initialization, error handling, and messaging for better readability and maintainability
+* Swapped the order of local and remote version retrieval to first read the local version before fetching the remote version. This improves clarity and error handling when checking for version mismatches
+* Adds Pester tests for `Update-Evergreen`
+
+## 2510.2811.0
+
+* Updated regex in `Get-GitHubRepoRelease.ps1` and `Get-GitHubRepoTag.ps1` to allow dots in repo names
+* Added a warning when no assets are found in a release and clarified verbose logging when skipping non-Windows assets.
+
 ## 2510.2808.0
 
 BREAKING CHANGE:
