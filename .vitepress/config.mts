@@ -75,7 +75,8 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'How to use the Evergreen API', link: '/api' },
-          { text: 'List endpoints used by Evergreen', link: '/endpoints' }
+          { text: 'List endpoints used by Evergreen', link: '/endpoints' },
+          { text: 'API usage', link: '/api-usage' },
         ]
       },
       {

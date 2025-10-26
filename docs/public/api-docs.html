@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evergreen API Documentation</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui.css" />
+    <style>
+        html {
+            box-sizing: border-box;
+            overflow: -moz-scrollbars-vertical;
+            overflow-y: scroll;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            margin: 0;
+            background: #fafafa;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header h1 {
+            margin: 0;
+            color: #3b4151;
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        .header p {
+            margin: 10px 0 0;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        #swagger-ui {
+            margin-top: 0;
+        }
+        .swagger-ui .topbar {
+            display: none;
+        }
+        .footer {
+            background: #ffffff;
+            border-top: 1px solid #e8e8e8;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+        }
+        .footer a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .navigation {
+            background: #f8f9fa;
+            border-bottom: 1px solid #e8e8e8;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .navigation a {
+            color: #0066cc;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Evergreen API Documentation</h1>
+            <p>Interactive API documentation for the Evergreen application version service</p>
+            <p style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 10px; border-radius: 4px; margin-top: 15px; color: #856404;">
+                <strong>📋 User-Agent Required:</strong> All API requests must include a custom User-Agent header following the format "company/location" (e.g., "ACME-Corp/NewYork").
+            </p>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <div class="container">
+            <a href="/">← Back to Documentation</a>
+            <a href="/api-usage">Usage Guide</a>
+            <a href="https://github.com/eucpilots/evergreen-module" target="_blank">GitHub</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="swagger-ui"></div>
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p>
+                Generated from OpenAPI 3.0 specification | 
+                <a href="https://eucpilots.com" target="_blank">EUC Pilots</a> | 
+                <a href="https://github.com/eucpilots/evergreen-module" target="_blank">View on GitHub</a>
+            </p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@5.9.0/swagger-ui-standalone-preset.js"></script>
+    <script>
+        window.onload = function() {
+            // Determine the base URL for loading the OpenAPI spec
+            // The spec is in the parent directory relative to public/
+            const baseUrl = window.location.origin + window.location.pathname.replace(/\/public\/[^\/]*$/, '').replace(/\/[^\/]*$/, '');
+            const specUrl = baseUrl + '/openapi.yml';
+            
+            console.log('Loading OpenAPI spec from:', specUrl);
+            
+            // Initialize Swagger UI
+            const ui = SwaggerUIBundle({
+                url: specUrl,
+                dom_id: '#swagger-ui',
+                deepLinking: true,
+                presets: [
+                    SwaggerUIBundle.presets.apis,
+                    SwaggerUIStandalonePreset
+                ],
+                plugins: [
+                    SwaggerUIBundle.plugins.DownloadUrl
+                ],
+                layout: "StandaloneLayout",
+                tryItOutEnabled: true,
+                supportedSubmitMethods: ['get', 'post', 'put', 'delete', 'patch'],
+                defaultModelsExpandDepth: 2,
+                defaultModelExpandDepth: 2,
+                docExpansion: 'list',
+                filter: true,
+                showExtensions: true,
+                showCommonExtensions: true,
+                validatorUrl: null, // Disable validator badge
+                requestInterceptor: function(request) {
+                    // Automatically add User-Agent header if not present
+                    if (!request.headers['User-Agent'] && !request.headers['user-agent']) {
+                        request.headers['User-Agent'] = 'SwaggerUI/Documentation';
+                    }
+                    return request;
+                },
+                responseInterceptor: function(response) {
+                    // Log responses for debugging if needed
+                    return response;
+                },
+                onComplete: function() {
+                    console.log('Swagger UI loaded successfully');
+                    
+                    // Add User-Agent notice to the Swagger UI
+                    setTimeout(function() {
+                        const infoSection = document.querySelector('.swagger-ui .info');
+                        if (infoSection) {
+                            const notice = document.createElement('div');
+                            notice.className = 'user-agent-notice';
+                            notice.style.cssText = 'background: #e7f3ff; border: 1px solid #b3d9ff; padding: 15px; margin: 15px 0; border-radius: 4px; color: #0066cc;';
+                            notice.innerHTML = `
+                                <strong>🔧 Testing with "Try it out":</strong><br>
+                                When using the "Try it out" feature below, a default User-Agent header will be automatically added. 
+                                For production use, replace "SwaggerUI/Documentation" with your own "company/location" format.
+                            `;
+                            infoSection.appendChild(notice);
+                        }
+                    }, 1000);
+                },
+                onFailure: function(error) {
+                    console.error('Failed to load OpenAPI spec:', error);
+                    const swaggerContainer = document.getElementById('swagger-ui');
+                    swaggerContainer.innerHTML = `
+                        <div style="padding: 40px; text-align: center; color: #d32f2f;">
+                            <h2>Failed to Load API Documentation</h2>
+                            <p>Could not load the OpenAPI specification from: <code>${specUrl}</code></p>
+                            <p>Please ensure the OpenAPI YAML file is available at the expected location.</p>
+                            <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; margin: 20px auto; max-width: 600px; border-radius: 4px; color: #856404;">
+                                <strong>Note:</strong> This API requires a custom User-Agent header in the format "company/location" for all requests.
+                            </div>
+                            <details style="margin-top: 20px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+                                <summary style="cursor: pointer; font-weight: bold;">Error Details</summary>
+                                <pre style="background: #f5f5f5; padding: 15px; margin-top: 10px; border-radius: 4px; overflow: auto;">${JSON.stringify(error, null, 2)}</pre>
+                            </details>
+                        </div>
+                    `;
+                }
+            });
+            
+            // Store reference for debugging
+            window.swaggerUI = ui;
+        };
+    </script>
+</body>
+</html>
