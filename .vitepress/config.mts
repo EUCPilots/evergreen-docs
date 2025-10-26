@@ -54,6 +54,7 @@ export default defineConfig({
           { text: 'Update supported apps', link: '/updateapps' },
           { text: 'Find supported apps', link: '/find' },
           { text: 'Return app details', link: '/use' },
+          { text: 'Filter app details', link: '/filter' },
           { text: 'Download installers', link: '/save' },
           { text: 'Test URLs', link: '/test' },
           { text: 'Export version information', link: '/export' },

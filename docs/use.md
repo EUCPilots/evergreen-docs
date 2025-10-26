@@ -43,27 +43,9 @@ Several applications may include additional properties in their output, which wi
 * `Language` - some application installers may support specific languages
 * `Date` - in some cases, Evergreen can return the release date of the returned version
 
-### Filter Output
+## Use Output
 
-Where an application returns more than one object to the pipeline, you will need to filter the output with `Where-Object` or `Sort-Object`. For example, `Get-EvergreenApp -Name MicrosoftTeams` returns both the 32-bit and 64-bit versions of the General and Preview release rings ot the Microsoft Teams installer. As most environments should be on 64-bit Windows these days, we can filter the 64-bit version of Teams with:
-
-```powershell
-Get-EvergreenApp -Name "MicrosoftTeams" | Where-Object { $_.Architecture -eq "x64" -and $_.Ring -eq "General" -and $_.Type -eq "msi" }
-```
-
-This will return details of the 64-bit Microsoft Teams installer that we can use in a script.
-
-```powershell
-Version      : 1.4.00.32771
-Ring         : General
-Architecture : x64
-Type         : msi
-URI          : https://statics.teams.cdn.office.net/production-windows-x64/1.4.00.32771/Teams_windows_x64.msi
-```
-
-### Use Output
-
-With the filtered output we can download the latest version of Microsoft Teams before copying it to a target location or installing it directly to the current system. The following commands filters `Get-EvergreenApp -Name MicrosoftTeams` to get the latest version and download, then downloads the installer with `Save-EvergreenApp` and finally uses `msiexec` to install Teams in a VDI supported configuration:
+With the output we can download the latest version of Microsoft Teams before copying it to a target location or installing it directly to the current system. The following commands filters `Get-EvergreenApp -Name MicrosoftTeams` to get the latest version and download, then downloads the installer with `Save-EvergreenApp` and finally uses `msiexec` to install Teams in a VDI supported configuration:
 
 ```powershell
 $Teams = Get-EvergreenApp -Name "MicrosoftTeams" | Where-Object { $_.Architecture -eq "x64" -and $_.Ring -eq "General" -and $_.Type -eq "msi" }
