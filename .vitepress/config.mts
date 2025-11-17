@@ -58,6 +58,7 @@ export default defineConfig({
           { text: 'Download installers', link: '/save' },
           { text: 'Test URLs', link: '/test' },
           { text: 'Export version information', link: '/export' },
+          { text: 'Working with GitHub rate limits', link: '/github' },
           { text: 'Example usage', link: '/examples' }
         ]
       },
