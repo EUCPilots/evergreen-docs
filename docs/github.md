@@ -19,4 +19,14 @@ A token that has read-only access to public repositories only is recommended. Th
 
 Evergreen will use the token stored in the `GITHUB_TOKEN` or `GH_TOKEN` environment variables. Setting either of these variables with the value of the personal access token will allow Evergreen to use the token when querying the GitHub API, significantly increasing the number of available requests.
 
+### GitHub Actions
+
 Additionally, if you are running Evergreen in a GitHub Actions workflow, the `GITHUB_TOKEN` will be used, so no additional personal access tokens are required - [Use GITHUB_TOKEN for authentication in workflows](https://docs.github.com/en/actions/tutorials/authenticate-with-github_token).
+
+For example, add the following code to the top of your workflow file:
+
+```yaml
+# Environment variables
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
