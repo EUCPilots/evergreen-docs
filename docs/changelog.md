@@ -29,10 +29,7 @@ layout: doc
 
 ## 2510.2808.0
 
-BREAKING CHANGE:
-
-* Release version that seperates the core module from the Evergreen apps
-* Requires the administrator to run `Update-Evergreen` to download the Evergreen app functions and manifests before using the module
+* <Badge type="warning" text="Breaking change" /> Release version that seperates the core module from the Evergreen apps. Requires the administrator to run `Update-Evergreen` to download the Evergreen app functions and manifests before using the module
 
 ::: warning
 Update existing scripts with `Update-Evergreen` after importing the Evergreen module, or before using other Evergreen functions.
@@ -106,13 +103,10 @@ The following functions are updated to use the Evergreen user agent:
 
 * Fixes `MicrosoftEdge`, `MicrosoftEdgeWebView2Runtime` for missing `Stable` channel #826
 * Adds `MicrosoftEdgeForBusiness`
-
-BREAKING CHANGES
-
-* `MicrosoftEdge` is split into `MicrosoftEdge` and `MicrosoftEdgeForBusiness`
-* `MicrosoftEdge` shows current versions only for each architecture - previous `Consumer` and `Enterprise` releases were showing the same version anyway
-* `Release` property only includes `Enterprise` to avoid breaking existing scripts
-* `MicrosoftEdgeForBusiness` shows all data available for Edge, including Administrative Templates
+* <Badge type="warning" text="Breaking change" /> `MicrosoftEdge` is split into `MicrosoftEdge` and `MicrosoftEdgeForBusiness`
+* <Badge type="warning" text="Breaking change" /> `MicrosoftEdge` shows current versions only for each architecture - previous `Consumer` and `Enterprise` releases were showing the same version anyway
+* <Badge type="warning" text="Breaking change" /> `Release` property only includes `Enterprise` to avoid breaking existing scripts
+* <Badge type="warning" text="Breaking change" /> `MicrosoftEdgeForBusiness` shows all data available for Edge, including Administrative Templates
 
 ## 2505.2104
 
@@ -219,10 +213,7 @@ BREAKING CHANGES
 * Adds `OracleJava23`, `NavimaticsWinFSP` [#741](https://github.com/eucpilots/evergreen-module/issues/741)
 * Fixes an issue with `PositRStudio` due to change in update URL [#742](https://github.com/eucpilots/evergreen-module/issues/742)
 * Updates default user agent
-
-BREAKING CHANGES
-
-* Renames `RStudio` to `PositRStudio`
+* <Badge type="warning" text="Breaking change" /> Renames `RStudio` to `PositRStudio`
 
 ## 2409.1352
 
@@ -261,10 +252,7 @@ BREAKING CHANGES
 * Updates `VideoLanVlcPlayer` [#704](https://github.com/eucpilots/evergreen-module/issues/704) [#158](https://github.com/eucpilots/evergreen-module/issues/158), `CitrixWorkspaceApp` [#578](https://github.com/eucpilots/evergreen-module/issues/578) [#298](https://github.com/eucpilots/evergreen-module/issues/298) to output warnings for known issues
 * Updates `GoogleChrome`, `MicrosoftOneDrive`, `MozillaFirefox`, `MozillaThunderbird` to reorder output properties
 * Updates default user agent
-
-BREAKING CHANGES
-
-* Renames `diagrams.net` to `JGraphDrawIO` [#714](https://github.com/eucpilots/evergreen-module/issues/714)
+* <Badge type="warning" text="Breaking change" /> Renames `diagrams.net` to `JGraphDrawIO` [#714](https://github.com/eucpilots/evergreen-module/issues/714)
 
 ## 2407.1202
 
@@ -273,11 +261,8 @@ BREAKING CHANGES
 * Updates output properties in internal function `Get-GitHubRepoRelease`
 * Fixes an issue with the `Version` property in `AkeoRufusAlt`
 * Fixes an issue with the `Filename` property in `PiriformCCleanerFree`
-
-BREAKING CHANGES
-
-* Removes `AmazonCorretto` - replaced with individual `AmazonCorretto`
-* Removes `OpenJDK` [#712](https://github.com/eucpilots/evergreen-module/issues/712)
+* <Badge type="warning" text="Breaking change" /> Removes `AmazonCorretto` - replaced with individual `AmazonCorretto`
+* <Badge type="warning" text="Breaking change" /> Removes `OpenJDK` [#712](https://github.com/eucpilots/evergreen-module/issues/712)
 
 ## 2407.1175
 
@@ -291,10 +276,7 @@ BREAKING CHANGES
 
 * Adds `OmnissaHorizonClient `, `Elgato4KCaptureUtility`, `ElgatoAudioEffects`, `ElgatoCameraHub `, `ElgatoControlCenter`, `ElgatoEpocCam`, `ElgatoGameCapture`, `ElgatoStreamDeck`, `ElgatoVideoCapture`, `ElgatoWaveLink`
 * Fixes an issue with `MicrosoftAzureDataStudio` [#708](https://github.com/eucpilots/evergreen-module/issues/708)
-
-BREAKING CHANGES
-
-* Removes `MicrosoftOutlook` - new Outlook uses a new update API and we haven't yet found a valid query to that API
+* <Badge type="warning" text="Breaking change" /> Removes `MicrosoftOutlook` - new Outlook uses a new update API and we haven't yet found a valid query to that API
 
 ## 2406.1124
 
@@ -311,10 +293,7 @@ IMPORTANT UPDATES
 * Renames `Invoke-EvergreenApp` to `Get-EvergreenAppFromApi`. `Invoke-EvergreenApp` remains as the alias
 * Renames `Invoke-EvergreenLibraryUpdate` to `Start-EvergreenLibraryUpdate`. `Invoke-EvergreenLibraryUpdate` remains as the alias
 * Renames `Get-EvergreenEndpoint` to `Get-EvergreenEndpointFromApi`. `Get-EvergreenEndpoint` remains as the alias
-
-BREAKING CHANGES
-
-* Removes `JetBrainsHub` - the update source no longer includes Windows specific update info
+* <Badge type="warning" text="Breaking change" /> Removes `JetBrainsHub` - the update source no longer includes Windows specific update info
 
 ## 2405.1076
 
@@ -335,10 +314,7 @@ BREAKING CHANGES
 * Updates `MicrosoftODBCDriverForSQLServer` [#685](https://github.com/eucpilots/evergreen-module/issues/685), `MicrosoftOLEDBDriverForSQLServer18` [#686](https://github.com/eucpilots/evergreen-module/issues/686), `MicrosoftOLEDBDriverForSQLServer` [#686](https://github.com/eucpilots/evergreen-module/issues/686)
 * Updates `MicrosoftSsms` with new source URL that should ensure latest version is always found, and simplifies function code [#687](https://github.com/eucpilots/evergreen-module/issues/687)
 * Updates `Resolve-MicrosoftFwLink` to support more flexible queries
-
-### Breaking Changes
-
-* Removes `VMwareHorizonClient`, `VMwareOSOptimizationTool`, `VMwareSDWANClient`, `VMwareWorkstationPlayer`, `VMwareWorkstationPro` [#678](https://github.com/eucpilots/evergreen-module/issues/678)
+* <Badge type="warning" text="Breaking change" /> Removes `VMwareHorizonClient`, `VMwareOSOptimizationTool`, `VMwareSDWANClient`, `VMwareWorkstationPlayer`, `VMwareWorkstationPro` [#678](https://github.com/eucpilots/evergreen-module/issues/678)
 
 ## 2405.1013
 
@@ -353,10 +329,7 @@ BREAKING CHANGES
 
 * Adds `GoogleChromeForTesting`, `GoogleChromeHeadlessShell` [#674](https://github.com/eucpilots/evergreen-module/issues/674)
 * Updates `MozillaThunderbird` with human readable channel names, adds Beta channel, MSIX file types
-
-### Breaking Changes
-
-* Removes `ChromiumChromeDriver` [#674](https://github.com/eucpilots/evergreen-module/issues/674)
+* <Badge type="warning" text="Breaking change" /> Removes `ChromiumChromeDriver` [#674](https://github.com/eucpilots/evergreen-module/issues/674)
 
 ## 2405.976
 
@@ -371,10 +344,7 @@ BREAKING CHANGES
 * Fixes `TableauDesktop`, `TableauPrep`, `TableauReader` [#658](https://github.com/eucpilots/evergreen-module/issues/658)
 * Fixes an issue with `Resolve-SystemNetWebRequest` with ability to set UserAgent to null [#669](https://github.com/eucpilots/evergreen-module/issues/669)
 * Adds a custom user agent to `Invoke-EvergreenApp` to improve reporting on Cloudflare Workers
-
-### Breaking Changes
-
-* Changes values for `MozillaFirefox` to be human readable [#667](https://github.com/eucpilots/evergreen-module/issues/667) [#672](https://github.com/eucpilots/evergreen-module/issues/672)
+* <Badge type="warning" text="Breaking change" /> Changes values for `MozillaFirefox` to be human readable [#667](https://github.com/eucpilots/evergreen-module/issues/667) [#672](https://github.com/eucpilots/evergreen-module/issues/672)
 
 ## 2405.959
 
@@ -439,10 +409,7 @@ BREAKING CHANGES
 * Updates `RStudio` to use the Stable release feed instead of the Dailies feed [#554](https://github.com/eucpilots/evergreen-module/issues/554)
 * Updates `Zoom` to use the download JSON found in the Zoom downloads page [#555](https://github.com/eucpilots/evergreen-module/issues/555)
 * Fixes an issue with `OracleJava17` (and all Oracle Java apps) where a later version was returned instead of the release version [#558](https://github.com/eucpilots/evergreen-module/issues/558)
-
-### Breaking Changes
-
-* `Zoom` has been split into `Zoom` and `ZoomVDI`. These functions also provide different property values. [#556](https://github.com/eucpilots/evergreen-module/discussions/556)
+* <Badge type="warning" text="Breaking change" /> `Zoom` has been split into `Zoom` and `ZoomVDI`. These functions also provide different property values. [#556](https://github.com/eucpilots/evergreen-module/discussions/556)
 
 ## 2309.859
 
@@ -542,10 +509,7 @@ BREAKING CHANGES
 
 * Adds `GoToConnect` [#469](https://github.com/eucpilots/evergreen-module/issues/469), `MicrosoftAzurePipelinesAgent` [#472](https://github.com/eucpilots/evergreen-module/issues/472), `AutodeskFusion360`, `GoToConnect` [#469](https://github.com/eucpilots/evergreen-module/issues/469), `PDFArranger` [#471](https://github.com/eucpilots/evergreen-module/issues/471)
 * Adds a temporary fix for `VMwareWorkstationPlayer`, and `VMwareWorkstationPro` with new download URLs [#474](https://github.com/eucpilots/evergreen-module/issues/474)
-
-### Breaking Changes
-
-* Renames `LogMeInGoToMeeting` and `LogMeInGoToOpener` to `GoToMeeting` and `GoToOpener`
+* <Badge type="warning" text="Breaking change" /> Renames `LogMeInGoToMeeting` and `LogMeInGoToOpener` to `GoToMeeting` and `GoToOpener`
 
 ## 2303.788
 
@@ -668,10 +632,7 @@ BREAKING CHANGES
 
 * Updates `Zoom` to add `x64` and `ARM64` support for meetings clients. Updates `Platform` property to better identify application installer
 * Updates `Invoke-EvergreenLibraryUpdate` to add installer path to application version information JSON file [#362](https://github.com/eucpilots/evergreen-module/discussions/362)
-
-### Breaking Changes
-
-* The values of the `Property` property in `Zoom` have changed. The values are `Meetings`, `Rooms`, `Plugin`, `VDI`, `Citrix`, `VMware`
+* <Badge type="warning" text="Breaking change" /> The values of the `Property` property in `Zoom` have changed. The values are `Meetings`, `Rooms`, `Plugin`, `VDI`, `Citrix`, `VMware`
 
 ## 2207.609
 
@@ -718,10 +679,7 @@ BREAKING CHANGES
 * Adds `VMwareHorizonClientAlt` (an alternative method for retrieving details for the VMware Horizon Client.)
 * Fix an issue with `VMwareTools` due to changes in source data
 * Fix an issue with `MattermostDesktop` due to changes in releases on the [GitHub repository](https://github.com/mattermost/desktop)
-
-### Breaking Changes
-
-* The following applications have been removed from Evergreen as they provide only links to downloads rather than direct links to installers - `CitrixAppLayeringFeed`, `CitrixApplicationDeliveryManagementFeed`, `CitrixEndpointManagementFeed`, `CitrixGatewayFeed`, `CitrixHypervisorFeed`, `CitrixLicensingFeed`, `CitrixReceiverFeed`, `CitrixSdwanFeed`, `CitrixVirtualAppsDesktopsFeed`, `CitrixWorkspaceAppFeed`
+* <Badge type="warning" text="Breaking change" /> The following applications have been removed from Evergreen as they provide only links to downloads rather than direct links to installers - `CitrixAppLayeringFeed`, `CitrixApplicationDeliveryManagementFeed`, `CitrixEndpointManagementFeed`, `CitrixGatewayFeed`, `CitrixHypervisorFeed`, `CitrixLicensingFeed`, `CitrixReceiverFeed`, `CitrixSdwanFeed`, `CitrixVirtualAppsDesktopsFeed`, `CitrixWorkspaceAppFeed`
 
 ## 2205.555
 
@@ -740,10 +698,7 @@ BREAKING CHANGES
 * Updates `RStudio` with new update sources for all curren branches and now returns Free and Pro editions [#318](https://github.com/eucpilots/evergreen-module/discussions/318)
 * Fixes an issue with installers returned by `MicrosoftEdgeDriver` and `MicrosoftEdgeWebView2Runtime`
 * Updates `McNeelRhino` to work under PowerShell 6/7 - resolves an issue when using `Invoke-RestMethod` which does not follow a HTTP 302 response
-
-### Breaking Changes
-
-* `RStudio` returns new properties that will require filtering the output. Properties include: `Branch`, `Channel`, `ProductName`, and `InstallerName`
+* <Badge type="warning" text="Breaking change" /> `RStudio` returns new properties that will require filtering the output. Properties include: `Branch`, `Channel`, `ProductName`, and `InstallerName`
 
 ## 2205.541
 
@@ -763,10 +718,7 @@ BREAKING CHANGES
 * Adds `Obsidian` [#310](https://github.com/eucpilots/evergreen-module/discussions/310), `ScreenToGif`
 * Updates `MicrosoftEdge`, `MicrosoftEdgeDriver`, `MicrosoftEdgeWebView2Runtime` to ensure that the correct versions are returned for the `Enterprise` view for Edge installers [#311](https://github.com/eucpilots/evergreen-module/discussions/311)
 * Updates various functions to use `Write-Error` instead of `throw` to ensure that functions continue where a specific query for an installer fails [#306](https://github.com/eucpilots/evergreen-module/issues/306)
-
-### Breaking Changes
-
-* Updates the approach used in `AdobeAcrobatReaderDC` to determine the version and available downloads for Adobe Acrobat Reader DC. Adobe has changed the available enterprise installers at [https://get.adobe.com/uk/reader/enterprise/](https://get.adobe.com/uk/reader/enterprise/) [#312](https://github.com/eucpilots/evergreen-module/discussions/312)
+* <Badge type="warning" text="Breaking change" /> Updates the approach used in `AdobeAcrobatReaderDC` to determine the version and available downloads for Adobe Acrobat Reader DC. Adobe has changed the available enterprise installers at [https://get.adobe.com/uk/reader/enterprise/](https://get.adobe.com/uk/reader/enterprise/) [#312](https://github.com/eucpilots/evergreen-module/discussions/312)
 
 ## 2202.525
 
@@ -813,11 +765,8 @@ BREAKING CHANGES
 * Updates source URI for `MicrosoftFSLogixApps` due to changes in source [#259](https://github.com/eucpilots/evergreen-module/issues/259)
 * Fixes URI values for `SumatraPDFViewer` due to changes in source [#211](https://github.com/eucpilots/evergreen-module/issues/211)
 * Fixes URI values for `FoxitReader` due to changes in source [#261](https://github.com/eucpilots/evergreen-module/issues/261)
-
-### Breaking Changes
-
-* Removes all default languages from `MozillaFirefox` and includes `en-US` only. Any supported languages can be passed to `MozillaFirefox` by passing a hashtable to `-AppParams`. For example: `Get-EvergreenApp -Name "MozillaFirefox" -AppParams @{Language="en-GB", "es-ES"}`
-* Removes `FIREFOX_ESR_NEXT` from `MozillaFirefox` as the Firefox update feed is not including the version number
+* <Badge type="warning" text="Breaking change" /> Removes all default languages from `MozillaFirefox` and includes `en-US` only. Any supported languages can be passed to `MozillaFirefox` by passing a hashtable to `-AppParams`. For example: `Get-EvergreenApp -Name "MozillaFirefox" -AppParams @{Language="en-GB", "es-ES"}`
+* <Badge type="warning" text="Breaking change" /> Removes `FIREFOX_ESR_NEXT` from `MozillaFirefox` as the Firefox update feed is not including the version number
 
 ## 2110.467
 
@@ -826,11 +775,8 @@ BREAKING CHANGES
 * Adds `USBPcap`. Thanks to [Dan Gough](https://github.com/DanGough)
 * Updates method used to determine version and download for `JSAP`
 * Adds private function `Resolve-DnsNameWrapper` to resolve DNS TXT records. Used by `GhislerTotalCommander`. Currently supports Windows only
-
-### Breaking Changes
-
-* Disables `LibreOffice` - the update method keeps changing requiring a significant amount of work to fix each time. [#218](https://github.com/eucpilots/evergreen-module/issues/218)
-* Updates `Microsoft365Apps` to fix some instances where the incorrect version number returned, and updates channel names in `Channel` property using the names listed in the `Channel` property in the configuration.xml. A `Name` property has been added with the full channel names to ensure readability. This reflects the same channel names used when creating a configuration in the [Microsoft 365 Apps admin center](https://config.office.com/)
+* <Badge type="warning" text="Breaking change" /> Disables `LibreOffice` - the update method keeps changing requiring a significant amount of work to fix each time. [#218](https://github.com/eucpilots/evergreen-module/issues/218)
+* <Badge type="warning" text="Breaking change" /> Updates `Microsoft365Apps` to fix some instances where the incorrect version number returned, and updates channel names in `Channel` property using the names listed in the `Channel` property in the configuration.xml. A `Name` property has been added with the full channel names to ensure readability. This reflects the same channel names used when creating a configuration in the [Microsoft 365 Apps admin center](https://config.office.com/)
   * Channel properties are listed in the following articles: [Configuration options for the Office Deployment Tool](https://docs.microsoft.com/en-us/deployoffice/office-deployment-tool-configuration-options#channel-attribute-part-of-add-element), [Update channel for Office LTSC 2021](https://docs.microsoft.com/en-us/deployoffice/ltsc2021/update#update-channel-for-office-ltsc-2021), [Update channel for Office 2019](https://docs.microsoft.com/en-us/deployoffice/office2019/update#update-channel-for-office-2019)
   * Full channel names are listed here: [Update history for Microsoft 365 Apps](https://docs.microsoft.com/en-us/officeupdates/update-history-microsoft365-apps-by-date)
 
@@ -839,22 +785,16 @@ BREAKING CHANGES
 * Adds `MicrosoftEdgeWebView2Runtime`, `MicrosoftBotFrameworkEmulator`, `Naps2`, `SmartBearSoapUI`, `NevcairielLAVFilters`
 * Adds the parameter `-AppParams` to `Get-EvergreenApp` that takes a hashtable of parameters to be passed to the internal application functions. Right now, this will only work with `GitHubRelease` - enabling Evergreen to return the releases for any GitHub repository with Windows releases that you pass via `-AppParams`
 * Updates the approach used for `TelegramDesktop`, because Telegram posts a release to GitHub that doesn't match the latest Windows release
-
-### Breaking Changes
-
-* Updates the channel names, and adds additional channels, in `Microsoft365Apps` - this release adds all available Microsoft 365 Apps channels - `FirstReleaseCurrent`, `Insiders`, `Monthly`, `Current`, `MonthlyEnterprise`, `Deferred`, `Broad`, `Targeted`, `FirstReleaseDeferred`, `Perpetual2019`, `PerpetualVL2019`
-* Disables `CiscoWebEx` - function is unable to return the current WebEx version using the existing method and no working method has been found
+* <Badge type="warning" text="Breaking change" /> Updates the channel names, and adds additional channels, in `Microsoft365Apps` - this release adds all available Microsoft 365 Apps channels - `FirstReleaseCurrent`, `Insiders`, `Monthly`, `Current`, `MonthlyEnterprise`, `Deferred`, `Broad`, `Targeted`, `FirstReleaseDeferred`, `Perpetual2019`, `PerpetualVL2019`
+* <Badge type="warning" text="Breaking change" /> Disables `CiscoWebEx` - function is unable to return the current WebEx version using the existing method and no working method has been found
 
 ## 2108.450
 
 * Adds `deviceTRUST`
 * Fixes an issue in `Save-EvergreenApp` when the path specified in the `-Path` parameter does not exist
 * Updates `LibreOffice` to gracefully handle download a scenario where the The Document Foundation pulls the download links for a published version [#218](https://github.com/eucpilots/evergreen-module/issues/218)
-
-### Breaking Changes
-
-* Updates `Postman` with `x86` and `x64` architecture
-* Updates `LibreOffice` with `Release` property with a value of `Still` or `Fresh`
+* <Badge type="warning" text="Breaking change" /> Updates `Postman` with `x86` and `x64` architecture
+* <Badge type="warning" text="Breaking change" /> Updates `LibreOffice` with `Release` property with a value of `Still` or `Fresh`
 
 ## 2107.441
 
@@ -873,10 +813,7 @@ BREAKING CHANGES
 * Updates `MicrosoftAzureCoreFunctionTools` to return MSI installers [#213](https://github.com/eucpilots/evergreen-module/issues/213)
 * Updates `CitrixWorkspaceApp` to return a `Stream` property that includes a value of `Current` or `LTSR`
 * Updates `LibreOffice` [#171](https://github.com/eucpilots/evergreen-module/issues/171), `CitrixWorkspaceApp`, `OracleJava8`, `MicrosoftSsms` to use `Invoke-RestMethodWrapper` to avoid needing to convert update feed into XML simplifying the code
-
-### Breaking Changes
-
-* Renames `AtlassianBitbucket` to `AtlassianSourcetree` [#177](https://github.com/eucpilots/evergreen-module/issues/177)
+* <Badge type="warning" text="Breaking change" /> Renames `AtlassianBitbucket` to `AtlassianSourcetree` [#177](https://github.com/eucpilots/evergreen-module/issues/177)
 
 ## 2107.425
 
@@ -903,20 +840,14 @@ BREAKING CHANGES
 * Adds `AmazonCorretto`, `ArtifexGhostscript`, `FreeFem`, `Gephi`, `Praat`, `SAGAGIS`, `Scratch`, `TeXstudio`, `gretl`. Thanks to [@adotcoop](https://github.com/adotcoop)
 * Updates private function `Get-Architecture` with additional processor architecture detections
 * Updates private function `Get-GitHubRepoRelease` to return a custom object if the GitHub API is rate limited
-
-### Breaking Changes
-
-* Remove portable installers and `.zip` file types from `Notepad++`
+* <Badge type="warning" text="Breaking change" /> Remove portable installers and `.zip` file types from `Notepad++`
 
 ## 2106.395
 
 * Adds `AkeoRufus` [#179](https://github.com/eucpilots/evergreen-module/issues/179), `BlenderLauncher` [#178](https://github.com/eucpilots/evergreen-module/issues/178)
 * Updates `MicrosoftFSLogixApps` to return both the production and preview releases [#176](https://github.com/eucpilots/evergreen-module/issues/176)
 * Updates `Veracrypt` to return the complete version number (e.g. `1.24-Update7`) [#166](https://github.com/eucpilots/evergreen-module/issues/166)
-
-### Breaking Changes
-
-* Adds the `Production` and `Preview` channels to `MicrosoftFSLogixApps` that will require filtering with `Where-Object`
+* <Badge type="warning" text="Breaking change" /> Adds the `Production` and `Preview` channels to `MicrosoftFSLogixApps` that will require filtering with `Where-Object`
 
 ## 2105.388
 
@@ -938,10 +869,7 @@ BREAKING CHANGES
 * Adds `Audacity`, `Wireshark` ([#153](https://github.com/eucpilots/evergreen-module/issues/153)), `LogMeInGoToMeeting` ([#152](https://github.com/eucpilots/evergreen-module/issues/152)), `LogMeInGoToOpener`
 * Updates `AdobeAcrobat` to include Reader updates for `2015`, `2017`, `2020`
 * Updates `AdobeAcrobat` to include 64-bit updates for Reader and Acrobat DC
-
-### Breaking Changes
-
-* Adds the `Architecture` property to `AdobeAcrobat`
+* <Badge type="warning" text="Breaking change" /> Adds the `Architecture` property to `AdobeAcrobat`
 
 ## 2105.366
 
@@ -976,7 +904,7 @@ BREAKING CHANGES
 
 ## 2104.337
 
-* **BREAKING CHANGE**: This version removes the `Get-` function for each application and introduces `Get-EvergreenApp`. See the docs site on how to use the new functions [https://stealthpuppy.com/evergreen/](https://stealthpuppy.com/evergreen/)
+* <Badge type="warning" text="Breaking change" /> This version removes the `Get-` function for each application and introduces `Get-EvergreenApp`. See the docs site on how to use the new functions [https://stealthpuppy.com/evergreen/](https://stealthpuppy.com/evergreen/)
 * Adds `Get-EvergreenApp`, `Find-EvergreenApp` and `Save-EvergreenApp`
 * Adds file type to SourceForge applications
 * Re-instates `ControlUpAgent` and `ControlUpConsole`
