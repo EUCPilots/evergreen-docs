@@ -3,9 +3,13 @@ layout: doc
 ---
 # Change log
 
+## 2511.2823.0
+
+* Adds `Get-AzulZulu` shared function for using `api.azul.com` for downloads
+
 ## 2510.2820.0
 
-* A working solution for adding output filters for Get-EvergreenApp. This should simplify returning details for a specific application by not requiring the use of `Where-Object`. The filters can be added to `/Evergreen/Filters`, along side the cached Apps and Manifests. [#871](https://github.com/EUCPilots/evergreen-module/discussions/871)
+* Adds support for adding output filters for Get-EvergreenApp. This should simplify returning details for a specific application by not requiring the use of `Where-Object`. The filters can be added to `/Evergreen/Filters`, along side the cached Apps and Manifests. [#871](https://github.com/EUCPilots/evergreen-module/discussions/871)
 * Removes `Sort-Object` from `Get-EvergreenApp` and `Get-EvergreenAppFromApi` to enable returning data to the pipeline as soon as it is available. This change will require the administrator to use `Sort-Object` manually. This removes `Sort-Object -Property @{ Expression = { [System.Version]$_.Version }; Descending = $true }, "Ring", "Channel", "Track" -ErrorAction "SilentlyContinue"` which can instead be used directly with `Get-EvergreenApp` to sort the output.
 
 ## 2510.2817.0
@@ -890,7 +894,7 @@ IMPORTANT UPDATES
 
 * Changes `FoxitReader` to return MSI installers instead of EXEs. Removes Elex, Portuguese (Portugal), and Turkish language support from this application because the installers returned are out of date.
 * Adds the following languages to `AdobeAcrobatReaderDC`: Swedish, Basque, Catalan, Croatian, Czech, Hungarian, Polish, Romanian, Russian, Slovakian, Slovenian, Turkish, Ukrainian
-* Adds a known issues list to the documentation: [https://stealthpuppy.com/evergreen/knownissues.html](https://stealthpuppy.com/evergreen/knownissues.html)
+* Adds a known issues list to the documentation: [https://eucpilots.com/evergreen-docs/knownissues.html](https://eucpilots.com/evergreen-docs/knownissues.html)
 
 ## 2104.348
 
@@ -904,7 +908,7 @@ IMPORTANT UPDATES
 
 ## 2104.337
 
-* <Badge type="warning" text="Breaking change" /> This version removes the `Get-` function for each application and introduces `Get-EvergreenApp`. See the docs site on how to use the new functions [https://stealthpuppy.com/evergreen/](https://stealthpuppy.com/evergreen/)
+* <Badge type="warning" text="Breaking change" /> This version removes the `Get-` function for each application and introduces `Get-EvergreenApp`. See the docs site on how to use the new functions [https://eucpilots.com/evergreen-docs/](https://eucpilots.com/evergreen-docs/)
 * Adds `Get-EvergreenApp`, `Find-EvergreenApp` and `Save-EvergreenApp`
 * Adds file type to SourceForge applications
 * Re-instates `ControlUpAgent` and `ControlUpConsole`
@@ -955,7 +959,7 @@ IMPORTANT UPDATES
 * Updates `Get-MicrosoftWvdRemoteDesktop` to output the `URI` property value in the format `https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE4MntQ` instead of the original `fwlink` source URL (e.g. `https://go.microsoft.com/fwlink/?linkid=2068602`)
 * Updates the following functions to use `Invoke-RestMethod` (via `Invoke-RestMethodWrapper`) instead of `Invoke-WebRequest` to simplify code and fix an issue where some functions where returning `Version` as a PSObject instead of System.String ([#109](https://github.com/eucpilots/evergreen-module/issues/109))
   * `Get-AtlassianBitbucket`, `Get-Cyberduck`, `Get-FileZilla`, `Get-Fork`, `Get-RingCentral`, `Get-ScooterBeyondCompare`, `Get-SumatraPDFReader`, `Get-VideoLanVlcPlayer`
-* Updates module `ReleaseNotes` location to: [https://stealthpuppy.com/evergreen/changelog.html](https://stealthpuppy.com/evergreen/changelog.html)
+* Updates module `ReleaseNotes` location to: [https://eucpilots.com/evergreen-docs/changelog.html](https://eucpilots.com/evergreen-docs/changelog.html)
 
 ## 2101.281
 
