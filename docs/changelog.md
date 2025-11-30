@@ -3,6 +3,10 @@ layout: doc
 ---
 # Change log
 
+## 2511.2826.0
+
+* Fix `JRE` or `JDK` string match in `Get-AzulZulu`
+
 ## 2511.2823.0
 
 * Adds `Get-AzulZulu` shared function for using `api.azul.com` for downloads
