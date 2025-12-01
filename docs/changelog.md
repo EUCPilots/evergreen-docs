@@ -3,6 +3,8 @@ layout: doc
 ---
 # Change log
 
+This is the change log for the Evergreen module. To view the changes for the Evergreen application functions, review the releases page at [eucpilots/evergreen-apps](https://github.com/EUCPilots/evergreen-apps/releases).
+
 ## 2511.2826.0
 
 * Fix `JRE` or `JDK` string match in `Get-AzulZulu`
