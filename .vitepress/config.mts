@@ -44,7 +44,8 @@ export default defineConfig({
         items: [
           { text: 'About Evergreen', link: '/about' },
           { text: 'How Evergreen works', link: '/how' },
-          { text: 'Installing Evergreen', link: '/install' }
+          { text: 'Installing Evergreen', link: '/install' },
+          { text: 'Supported apps', link: '/apps' },
         ]
       },
       {
@@ -86,7 +87,6 @@ export default defineConfig({
         collapsed: false,
         items: [
           { text: 'Under the hood', link: '/under' },
-          { text: 'Supported apps', link: '/supported-apps' },
           { text: 'Troubleshooting', link: '/troubleshoot' },
           { text: 'Known issues', link: '/issues' }
         ]
